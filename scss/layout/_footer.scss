@@ -1,15 +1,63 @@
 // ============================================
-// Footer
+// Footer with Kente Cloth Colors
 // ============================================
 
+// Kente cloth color palette (Ghanaian traditional colors)
+$kente-gold: #D4AF37;
+$kente-red: #B71C1C;
+$kente-green: #1B5E20;
+$kente-black: #121212;
+$kente-yellow: #F9A825;
+$kente-orange: #E65100;
+$kente-blue: #0D47A1;
+$kente-white: #FFFFFF;
+
 .site-footer {
-  background-color: $color-african-black;
-  color: $color-african-white;
+  background-color: $kente-black;
+  color: $kente-white;
   padding: $spacing-xl 0 $spacing-md;
   margin-top: $spacing-xl;
+  position: relative;
+
+  // Kente-inspired top border
+  &::before {
+    content: '';
+    display: block;
+    height: 8px;
+    background: repeating-linear-gradient(
+      to right,
+      $kente-gold 0px,
+      $kente-gold 20px,
+      $kente-red 20px,
+      $kente-red 40px,
+      $kente-green 40px,
+      $kente-green 60px,
+      $kente-yellow 60px,
+      $kente-yellow 80px,
+      $kente-orange 80px,
+      $kente-orange 100px,
+      $kente-blue 100px,
+      $kente-blue 120px
+    );
+  }
+
+  // Kente pattern overlay
+  &::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v4H0zM0 8h40v4H0zM0 16h40v4H0zM0 24h40v4H0zM0 32h40v4H0z' fill='%23D4AF37' fill-opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
 .footer-inner {
+  position: relative;
+  z-index: 1;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 $spacing-lg;
@@ -135,7 +183,7 @@
   }
 }
 
-// Footer bottom bar
+// Footer bottom bar with Kente accent
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
@@ -143,10 +191,21 @@
   justify-content: space-between;
   gap: $spacing-md;
   padding-top: $spacing-lg;
-  border-top: 1px solid rgba($color-african-white, 0.1);
+  border-top: 3px solid transparent;
+  border-image: repeating-linear-gradient(
+    to right,
+    $kente-gold 0px,
+    $kente-gold 15px,
+    $kente-red 15px,
+    $kente-red 30px,
+    $kente-green 30px,
+    $kente-green 45px,
+    $kente-yellow 45px,
+    $kente-yellow 60px
+  ) 1;
 
   p {
-    color: tint($color-african-white, 20%);
+    color: tint($kente-white, 20%);
     font-size: 0.85rem;
     margin: 0;
   }
@@ -159,13 +218,13 @@
     margin: 0;
 
     a {
-      color: tint($color-african-white, 20%);
+      color: tint($kente-white, 20%);
       font-size: 0.85rem;
       text-decoration: none;
       transition: color $transition-fast;
 
       &:hover {
-        color: $color-african-gold;
+        color: $kente-gold;
       }
     }
   }

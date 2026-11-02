@@ -295,6 +295,104 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ========================================
+  // Feature F: Hero Background Image Loop
+  // ========================================
+  function initHeroBgLoop() {
+    const slides = document.querySelectorAll('.hero-bg-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+
+    if (slides.length === 0) return;
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let intervalId;
+
+    function goToSlide(index) {
+      slides.forEach(function(slide) {
+        slide.classList.remove('active');
+      });
+      dots.forEach(function(dot) {
+        dot.classList.remove('active');
+      });
+
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+
+      if (dots[currentSlide]) {
+        dots[currentSlide].classList.add('active');
+      }
+    }
+
+    function nextSlide() {
+      const next = (currentSlide + 1) % totalSlides;
+      goToSlide(next);
+    }
+
+    function startLoop() {
+      intervalId = setInterval(nextSlide, 4000);
+    }
+
+    function stopLoop() {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    }
+
+    // Dot click handlers
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        stopLoop();
+        goToSlide(parseInt(this.dataset.slide, 10));
+        startLoop();
+      });
+    });
+
+    // Pause on hover
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+      heroSection.addEventListener('mouseenter', stopLoop);
+      heroSection.addEventListener('mouseleave', startLoop);
+    }
+
+    // Start the loop
+    startLoop();
+  }
+
+  // ========================================
+  // Feature G: Video Carousel
+  // ========================================
+  function initVideoCarousel() {
+    const thumbnails = document.querySelectorAll('.video-thumb');
+    const mainFrame = document.getElementById('mainVideoFrame');
+
+    if (thumbnails.length === 0 || !mainFrame) return;
+
+    thumbnails.forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        // Update active state
+        thumbnails.forEach(function(t) {
+          t.classList.remove('active');
+        });
+        this.classList.add('active');
+
+        // Change video
+        const videoUrl = this.dataset.video;
+        if (videoUrl) {
+          mainFrame.src = videoUrl;
+        }
+      });
+
+      // Keyboard support
+      thumb.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+  }
+
+  // ========================================
   // Initialize All Features
   // ========================================
   initRecipeFiltering();
@@ -302,5 +400,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initContactForm();
   initMobileNav();
   initNewsletter();
+  initHeroBgLoop();
+  initVideoCarousel();
 
 });

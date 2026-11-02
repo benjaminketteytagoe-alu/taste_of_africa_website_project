@@ -1,5 +1,5 @@
 // ============================================
-// Hero Section
+// Hero Section with Image Loop
 // ============================================
 
 .hero-section {
@@ -9,16 +9,54 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    135deg,
-    $color-african-black 0%,
-    shade($color-african-red, 30%) 50%,
-    $color-african-black 100%
-  );
   color: $color-african-white;
   overflow: hidden;
 
+  // Background image loop
+  .hero-bg-loop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    .hero-bg-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Dark overlay for readability
   &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba($color-african-black, 0.5) 0%,
+      rgba($color-african-black, 0.3) 50%,
+      rgba($color-african-black, 0.7) 100%
+    );
+    z-index: 1;
+  }
+
+  // Kente-inspired pattern overlay
+  &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -27,13 +65,13 @@
     height: 100%;
     background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     opacity: 0.5;
-    z-index: 0;
+    z-index: 1;
   }
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   max-width: 800px;
   padding: $spacing-xl $spacing-lg;
@@ -42,13 +80,15 @@
   h1 {
     color: $color-african-white;
     margin-bottom: $spacing-md;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     color: tint($color-african-white, 20%);
     margin-bottom: $spacing-xl;
     line-height: 1.6;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   }
 
   .hero-cta {
@@ -59,7 +99,128 @@
   }
 }
 
-// Video container
+// Hero loop navigation dots
+.hero-loop-dots {
+  position: absolute;
+  bottom: $spacing-lg;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: $spacing-sm;
+
+  .hero-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba($color-african-white, 0.4);
+    border: 2px solid $color-african-white;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &.active {
+      background: $color-african-gold;
+      border-color: $color-african-gold;
+      transform: scale(1.2);
+    }
+
+    &:hover {
+      background: rgba($color-african-white, 0.7);
+    }
+  }
+}
+
+// Video carousel container
+.video-carousel {
+  position: relative;
+  width: 100%;
+  margin: $spacing-xl auto;
+  animation: fadeInScale 0.8s ease;
+}
+
+.video-carousel-main {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: $spacing-md;
+  overflow: hidden;
+  box-shadow: $shadow-elevated;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+.video-carousel-thumbnails {
+  display: flex;
+  gap: $spacing-sm;
+  justify-content: center;
+  margin-top: $spacing-md;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .video-thumb {
+    position: relative;
+    width: 120px;
+    height: 68px;
+    border-radius: $spacing-sm;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all $transition-fast;
+    opacity: 0.6;
+
+    &.active {
+      border-color: $color-african-gold;
+      opacity: 1;
+      box-shadow: $shadow-gold-glow;
+    }
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      background: rgba($color-african-black, 0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 0 6px 10px;
+        border-color: transparent transparent transparent $color-african-white;
+        margin-left: 2px;
+      }
+    }
+  }
+}
+
+// Legacy video container (kept for backward compatibility)
 .video-container {
   position: relative;
   width: 100%;

@@ -15,7 +15,7 @@
   <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="index.html" class="site-brand" aria-label="Tastes of Africa Home">
-        <span class="brand-icon">🌍</span>
+        <img src="assets/taste_of_africa_logo.jpeg" alt="Tastes of Africa Logo" class="brand-logo">
         <span>Tastes of Africa</span>
       </a>
 
@@ -31,7 +31,7 @@
 
       <div style="display:flex;align-items:center;gap:1rem;">
         <span class="favorites-badge" aria-label="Favorites count">
-          ❤️ Favorites (<span id="favoritesCount">0</span>)
+          Favorites (<span id="favoritesCount">0</span>)
         </span>
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span>
@@ -56,8 +56,18 @@
   </div>
 
   <main role="main">
-    <!-- Hero Section -->
+    <!-- Hero Section with Image Loop -->
     <section class="hero-section home-hero" aria-label="Welcome to Tastes of Africa">
+      <!-- Background Image Loop -->
+      <div class="hero-bg-loop" id="heroBgLoop">
+        <div class="hero-bg-slide active" style="background-image: url('assets/jollof_rice_2.jpg')"></div>
+        <div class="hero-bg-slide" style="background-image: url('assets/lamb_tagine1.jpg')"></div>
+        <div class="hero-bg-slide" style="background-image: url('assets/injera_1.jpg')"></div>
+        <div class="hero-bg-slide" style="background-image: url('assets/bunny_chow_1.png')"></div>
+        <div class="hero-bg-slide" style="background-image: url('assets/chapati_1.jpeg')"></div>
+        <div class="hero-bg-slide" style="background-image: url('assets/isombe_1.jpg')"></div>
+      </div>
+
       <div class="hero-content">
         <h1>Experience the Vibrant Flavors of Africa</h1>
         <p class="hero-subtitle">Discover ancestral culinary heritage, seasonal indigenous ingredients, and the bold tastes that define the African continent — from the spice markets of Marrakech to the bustling kitchens of Lagos.</p>
@@ -66,13 +76,50 @@
           <a href="regions.html" class="btn btn-secondary">Culinary Regions</a>
         </div>
       </div>
+
+      <!-- Loop Navigation Dots -->
+      <div class="hero-loop-dots" id="heroLoopDots">
+        <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+        <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
+        <button class="hero-dot" data-slide="4" aria-label="Slide 5"></button>
+        <button class="hero-dot" data-slide="5" aria-label="Slide 6"></button>
+      </div>
     </section>
 
-    <!-- Hero Video -->
-    <section class="section" aria-label="Introduction video">
+    <!-- African Cuisine Gallery -->
+    <section class="section cuisine-gallery" aria-label="African cuisine gallery">
       <div class="container">
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Introduction to African Culinary Heritage" allowfullscreen loading="lazy"></iframe>
+        <div class="section-header">
+          <h2>African Cuisine Gallery</h2>
+          <p>A visual journey through the diverse and vibrant dishes from across the African continent.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="assets/jollof_rice_1.jpeg" alt="Ghanaian Jollof Rice — the iconic West African celebration dish" loading="lazy">
+            <figcaption class="gallery-caption">West African Jollof Rice</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/lamb_tagine_2.jpg" alt="Moroccan Lamb Tagine — slow-cooked with apricots and warm spices" loading="lazy">
+            <figcaption class="gallery-caption">North African Lamb Tagine</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/injera_2.webp" alt="Ethiopian Injera with Doro Wat — spongy teff flatbread with spicy stew" loading="lazy">
+            <figcaption class="gallery-caption">East African Injera & Doro Wat</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/bunny_chow_2.jpg" alt="Durban Bunny Chow — hollowed bread filled with spicy curry" loading="lazy">
+            <figcaption class="gallery-caption">South African Bunny Chow</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/chapati_1.jpeg" alt="East African Chapati — flaky flatbread served with curry or stew" loading="lazy">
+            <figcaption class="gallery-caption">East African Chapati</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/isombe_1.jpg" alt="Rwandan Isombe — pounded cassava leaves in rich peanut sauce" loading="lazy">
+            <figcaption class="gallery-caption">Central African Isombe</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -88,13 +135,17 @@
           <!-- Jollof Rice -->
           <figure class="dish-card recipe-card" data-region="west-africa" data-id="jollof-rice" data-name="Jollof Rice">
             <div class="card-image">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%232A1810' width='800' height='600'/%3E%3Cpolygon points='0,0 800,0 800,40 0,560' fill='%23D4AF37' opacity='0.1'/%3E%3Cpolygon points='0,600 800,600 800,560 0,40' fill='%23B71C1C' opacity='0.1'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='36' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3EJollof Rice%3C/text%3E%3Ctext x='400' y='320' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3EWest Africa%3C/text%3E%3C/svg%3E" alt="Placeholder for West African Jollof Rice served with fried plantains and grilled chicken" loading="lazy">
+              <img src="assets/jollof_rice_2.jpg" alt="Ghanaian Jollof Rice — vibrant one-pot rice dish in rich tomato and pepper sauce" loading="lazy">
               <button class="btn-favorite card-favorite" data-id="jollof-rice" data-name="Jollof Rice" aria-label="Add Jollof Rice to favorites"></button>
+              <span class="badge badge-region card-region-overlay">West Africa</span>
             </div>
             <figcaption class="card-content">
-              <span class="badge badge-region">West Africa</span>
               <h3 class="card-title">Ghanaian/Nigerian Jollof Rice</h3>
-              <p class="card-description">A vibrant one-pot rice dish cooked in a rich tomato and pepper sauce, flavored with scotch bonnets and aromatic spices.</p>
+              <p class="card-description">A vibrant one-pot rice dish cooked in a rich tomato and pepper sauce, flavored with scotch bonnets and aromatic spices. The iconic celebration dish of West Africa.</p>
+              <div class="card-meta">
+                <span class="meta-item">⏱ 45 min</span>
+                <span class="meta-item">🌶 Spicy</span>
+              </div>
               <div class="card-footer">
                 <a href="recipes/jollof-rice.html" class="btn btn-gold">View Recipe</a>
               </div>
@@ -104,13 +155,17 @@
           <!-- Tagine -->
           <figure class="dish-card recipe-card" data-region="north-africa" data-id="tagine" data-name="Lamb Tagine">
             <div class="card-image">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%232A1810' width='800' height='600'/%3E%3Cpolygon points='0,0 800,0 800,40 0,560' fill='%23D4AF37' opacity='0.1'/%3E%3Cpolygon points='0,600 800,600 800,560 0,40' fill='%23B71C1C' opacity='0.1'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='36' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3ELamb Tagine%3C/text%3E%3Ctext x='400' y='320' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3ENorth Africa%3C/text%3E%3C/svg%3E" alt="Placeholder for Moroccan Lamb and Apricot Tagine with couscous" loading="lazy">
+              <img src="assets/lamb_tagine1.jpg" alt="Moroccan Lamb and Apricot Tagine — slow-cooked stew with warm spices" loading="lazy">
               <button class="btn-favorite card-favorite" data-id="tagine" data-name="Lamb Tagine" aria-label="Add Lamb Tagine to favorites"></button>
+              <span class="badge badge-region card-region-overlay">North Africa</span>
             </div>
             <figcaption class="card-content">
-              <span class="badge badge-region">North Africa</span>
               <h3 class="card-title">Moroccan Lamb & Apricot Tagine</h3>
               <p class="card-description">A slow-cooked stew of tender lamb, sweet apricots, and warm spices like cinnamon and saffron, served over fluffy couscous.</p>
+              <div class="card-meta">
+                <span class="meta-item">⏱ 2 hrs</span>
+                <span class="meta-item">🫙 Slow Cook</span>
+              </div>
               <div class="card-footer">
                 <a href="recipes/tagine.html" class="btn btn-gold">View Recipe</a>
               </div>
@@ -120,13 +175,17 @@
           <!-- Injera -->
           <figure class="dish-card recipe-card" data-region="east-africa" data-id="injera" data-name="Injera with Doro Wat">
             <div class="card-image">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%232A1810' width='800' height='600'/%3E%3Cpolygon points='0,0 800,0 800,40 0,560' fill='%23D4AF37' opacity='0.1'/%3E%3Cpolygon points='0,600 800,600 800,560 0,40' fill='%23B71C1C' opacity='0.1'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='36' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3EInjera%3C/text%3E%3Ctext x='400' y='320' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3EEast Africa%3C/text%3E%3C/svg%3E" alt="Placeholder for Ethiopian Injera with Doro Wat chicken stew" loading="lazy">
+              <img src="assets/injera_1.jpg" alt="Ethiopian Injera with Doro Wat — spongy teff flatbread with spicy chicken stew" loading="lazy">
               <button class="btn-favorite card-favorite" data-id="injera" data-name="Injera with Doro Wat" aria-label="Add Injera with Doro Wat to favorites"></button>
+              <span class="badge badge-region card-region-overlay">East Africa</span>
             </div>
             <figcaption class="card-content">
-              <span class="badge badge-region">East Africa</span>
               <h3 class="card-title">Ethiopian Injera & Doro Wat</h3>
-              <p class="card-description">A spongy teff flatbread served with a spicy chicken stew infused with berbere spice and niter kibbeh.</p>
+              <p class="card-description">A spongy teff flatbread served with a spicy chicken stew infused with berbere spice and niter kibbeh. A communal dining experience.</p>
+              <div class="card-meta">
+                <span class="meta-item">⏱ 90 min</span>
+                <span class="meta-item">🌶 Spicy</span>
+              </div>
               <div class="card-footer">
                 <a href="recipes/injera.html" class="btn btn-gold">View Recipe</a>
               </div>
@@ -136,15 +195,39 @@
           <!-- Bunny Chow -->
           <figure class="dish-card recipe-card" data-region="southern-africa" data-id="bunny-chow" data-name="Durban Bunny Chow">
             <div class="card-image">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%232A1810' width='800' height='600'/%3E%3Cpolygon points='0,0 800,0 800,40 0,560' fill='%23D4AF37' opacity='0.1'/%3E%3Cpolygon points='0,600 800,600 800,560 0,40' fill='%23B71C1C' opacity='0.1'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='36' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3EBunny Chow%3C/text%3E%3Ctext x='400' y='320' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3ESouthern Africa%3C/text%3E%3C/svg%3E" alt="Placeholder for South African Durban Bunny Chow with curry" loading="lazy">
+              <img src="assets/bunny_chow_1.png" alt="South African Durban Bunny Chow — hollowed bread filled with spicy curry" loading="lazy">
               <button class="btn-favorite card-favorite" data-id="bunny-chow" data-name="Durban Bunny Chow" aria-label="Add Durban Bunny Chow to favorites"></button>
+              <span class="badge badge-region card-region-overlay">Southern Africa</span>
             </div>
             <figcaption class="card-content">
-              <span class="badge badge-region">Southern Africa</span>
               <h3 class="card-title">South African Durban Bunny Chow</h3>
-              <p class="card-description">A hollowed loaf of white bread filled with spicy Indian-inspired curry, a Durban street food classic.</p>
+              <p class="card-description">A hollowed loaf of white bread filled with spicy Indian-inspired curry, a Durban street food classic that blends cultures.</p>
+              <div class="card-meta">
+                <span class="meta-item">⏱ 60 min</span>
+                <span class="meta-item">🌶 Medium</span>
+              </div>
               <div class="card-footer">
                 <a href="recipes/bunny-chow.html" class="btn btn-gold">View Recipe</a>
+              </div>
+            </figcaption>
+          </figure>
+
+          <!-- Isombe -->
+          <figure class="dish-card recipe-card" data-region="central-africa" data-id="isombe" data-name="Rwandan Isombe">
+            <div class="card-image">
+              <img src="assets/isombe_1.jpg" alt="Rwandan Isombe — pounded cassava leaves cooked in rich peanut sauce" loading="lazy">
+              <button class="btn-favorite card-favorite" data-id="isombe" data-name="Rwandan Isombe" aria-label="Add Rwandan Isombe to favorites"></button>
+              <span class="badge badge-region card-region-overlay">Central Africa</span>
+            </div>
+            <figcaption class="card-content">
+              <h3 class="card-title">Rwandan Isombe</h3>
+              <p class="card-description">Pounded cassava leaves cooked in a rich peanut sauce with onions and tomatoes. A beloved Central African staple dish.</p>
+              <div class="card-meta">
+                <span class="meta-item">⏱ 90 min</span>
+                <span class="meta-item">🥜 Nutty</span>
+              </div>
+              <div class="card-footer">
+                <a href="recipes/isombe.html" class="btn btn-gold">View Recipe</a>
               </div>
             </figcaption>
           </figure>
@@ -162,7 +245,13 @@
         <div class="regions-grid">
           <figure class="region-card">
             <div class="card-image">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%231B5E20' width='800' height='600'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='40' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3EWest Africa%3C/text%3E%3Ctext x='400' y='330' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3EJollof, Egusi, Fufu%3C/text%3E%3C/svg%3E" alt="West African cuisine featuring jollof rice, egusi soup, and fufu" loading="lazy">
+              <img src="assets/jollof_rice_2.jpg" alt="West African cuisine featuring jollof rice, egusi soup, and fufu" loading="lazy">
+              <div class="region-flags">
+                <span class="flag-icon" title="Ghana">🇬🇭</span>
+                <span class="flag-icon" title="Nigeria">🇳🇬</span>
+                <span class="flag-icon" title="Senegal">🇸🇳</span>
+                <span class="flag-icon" title="Ivory Coast">🇨🇮</span>
+              </div>
             </div>
             <figcaption class="card-content">
               <h3 class="card-title">West Africa</h3>
@@ -173,7 +262,13 @@
 
           <figure class="region-card">
             <div class="card-image">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%23B71C1C' width='800' height='600'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='40' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3ENorth Africa%3C/text%3E%3Ctext x='400' y='330' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3ETagines, Couscous, Harissa%3C/text%3E%3C/svg%3E" alt="North African cuisine featuring tagines, couscous, and harissa" loading="lazy">
+              <img src="assets/lamb_tagine1.jpg" alt="North African cuisine featuring tagines, couscous, and harissa" loading="lazy">
+              <div class="region-flags">
+                <span class="flag-icon" title="Morocco">🇲🇦</span>
+                <span class="flag-icon" title="Tunisia">🇹🇳</span>
+                <span class="flag-icon" title="Algeria">🇩🇿</span>
+                <span class="flag-icon" title="Egypt">🇪🇬</span>
+              </div>
             </div>
             <figcaption class="card-content">
               <h3 class="card-title">North Africa (The Maghreb)</h3>
@@ -184,7 +279,13 @@
 
           <figure class="region-card">
             <div class="card-image">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%23D4AF37' width='800' height='600'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='40' fill='%23121212' text-anchor='middle' font-weight='bold'%3EEast Africa%3C/text%3E%3Ctext x='400' y='330' font-family='sans-serif' font-size='24' fill='%23121212' text-anchor='middle'%3EInjera, Berbere, Ugali%3C/text%3E%3C/svg%3E" alt="East African cuisine featuring injera, berbere spice, and ugali" loading="lazy">
+              <img src="assets/injera_1.jpg" alt="East African cuisine featuring injera, berbere spice, and ugali" loading="lazy">
+              <div class="region-flags">
+                <span class="flag-icon" title="Ethiopia">🇪🇹</span>
+                <span class="flag-icon" title="Kenya">🇰🇪</span>
+                <span class="flag-icon" title="Tanzania">🇹🇿</span>
+                <span class="flag-icon" title="Uganda">🇺🇬</span>
+              </div>
             </div>
             <figcaption class="card-content">
               <h3 class="card-title">East Africa & The Horn</h3>
@@ -192,42 +293,65 @@
               <a href="regions.html#east-africa" class="btn btn-gold">Explore Region</a>
             </figcaption>
           </figure>
+
+          <figure class="region-card">
+            <div class="card-image">
+              <img src="assets/bunny_chow_1.png" alt="Southern and Central African cuisine" loading="lazy">
+              <div class="region-flags">
+                <span class="flag-icon" title="South Africa">🇿🇦</span>
+                <span class="flag-icon" title="Rwanda">🇷🇼</span>
+                <span class="flag-icon" title="Zimbabwe">🇿🇼</span>
+                <span class="flag-icon" title="DR Congo">🇨🇩</span>
+              </div>
+            </div>
+            <figcaption class="card-content">
+              <h3 class="card-title">Southern & Central Africa</h3>
+              <p class="card-description">Bunny chow, isombe, bobotie, and braai — a fusion of indigenous, Indian, and European influences.</p>
+              <a href="regions.html#southern-central" class="btn btn-gold">Explore Region</a>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- Food Trends -->
+    <!-- Latest Food Trends -->
     <section class="section food-trends home-section" aria-label="Latest food trends">
       <div class="container">
         <div class="section-header">
           <h2>Latest Food Trends</h2>
-          <p>Stay updated on the latest movements in African cuisine and global food culture.</p>
+          <p>Stay updated on the latest movements in African cuisine — discover, learn, and get inspired.</p>
         </div>
         <div class="articles-grid">
-          <article class="article-card">
+          <article class="trend-article-card">
+            <div class="card-image">
+              <img src="assets/jollof_rice_2.jpg" alt="Jollof Rice gaining global popularity" loading="lazy">
+            </div>
             <div class="card-content">
               <span class="badge badge-trending">Trending</span>
-              <h3 class="card-title">The Global Rise of Fonio & Ancient African Grains</h3>
-              <p class="card-description">From West African farms to global tables, <mark>Fonio</mark> is gaining recognition as a superfood grain with incredible nutritional value and sustainability.</p>
-              <a href="#" class="btn btn-gold">Read More</a>
+              <h3 class="card-title">The Global Rise of African Cuisine</h3>
+              <p class="card-description">From Jollof rice to Tagine, African dishes are conquering palates worldwide. Traditional recipes are gaining global recognition in top restaurants.</p>
             </div>
           </article>
 
-          <article class="article-card">
+          <article class="trend-article-card">
+            <div class="card-image">
+              <img src="assets/bunny_chow_1.png" alt="Street food culture across Africa" loading="lazy">
+            </div>
             <div class="card-content">
               <span class="badge badge-chefs-pick">Chef's Pick</span>
-              <h3 class="card-title">Contemporary Plant-Based Adaptations of Traditional Stews</h3>
-              <p class="card-description">Modern chefs are reimagining classic African stews with plant-based proteins while preserving the bold flavors of <mark>Berbere</mark> and other traditional spice blends.</p>
-              <a href="#" class="btn btn-gold">Read More</a>
+              <h3 class="card-title">Street Food Culture Across Africa</h3>
+              <p class="card-description">Explore the vibrant street food scene from Lagos to Nairobi — where bold flavors meet everyday innovation and cultural fusion.</p>
             </div>
           </article>
 
-          <article class="article-card">
+          <article class="trend-article-card">
+            <div class="card-image">
+              <img src="assets/isombe_2.webp" alt="Traditional African cooking techniques" loading="lazy">
+            </div>
             <div class="card-content">
               <span class="badge badge-trending">Trending</span>
-              <h3 class="card-title">Pan-African Fine Dining: Michelin Recognition</h3>
-              <p class="card-description">African chefs are earning Michelin stars by elevating indigenous ingredients like <mark>Moringa</mark> and indigenous grains to fine dining excellence.</p>
-              <a href="#" class="btn btn-gold">Read More</a>
+              <h3 class="card-title">Traditional Cooking Techniques Reimagined</h3>
+              <p class="card-description">Ancient African cooking methods meet modern kitchens — discover how heritage techniques like pounded cassava leaves are preserved and evolved.</p>
             </div>
           </article>
         </div>
@@ -235,7 +359,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer with Kente Colors -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-grid">
@@ -243,10 +367,26 @@
           <h3>Tastes of Africa</h3>
           <p>Celebrating the rich culinary heritage of the African continent through authentic recipes, cultural stories, and community.</p>
           <ul class="social-links">
-            <li><a href="#" aria-label="Follow us on Facebook">📘</a></li>
-            <li><a href="#" aria-label="Follow us on Instagram">📷</a></li>
-            <li><a href="#" aria-label="Follow us on Twitter">🐦</a></li>
-            <li><a href="#" aria-label="Follow us on YouTube">🎬</a></li>
+            <li>
+              <a href="#" aria-label="Follow us on Facebook">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Follow us on Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Follow us on Twitter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Follow us on YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+            </li>
           </ul>
         </div>
 

@@ -9,6 +9,8 @@
   overflow: hidden;
   box-shadow: $shadow-card;
   transition: transform $transition-normal, box-shadow $transition-normal, border-color $transition-normal;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     transform: translateY(-6px);
@@ -31,7 +33,19 @@
     }
 
     &:hover img {
-      transform: scale(1.05);
+      transform: scale(1.08);
+    }
+
+    // Image overlay gradient for better text contrast
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background: linear-gradient(to top, rgba($color-african-black, 0.4), transparent);
+      pointer-events: none;
     }
 
     .card-favorite {
@@ -40,10 +54,21 @@
       right: $spacing-md;
       z-index: 2;
     }
+
+    // Region badge overlay on image
+    .card-region-overlay {
+      position: absolute;
+      bottom: $spacing-sm;
+      left: $spacing-sm;
+      z-index: 2;
+    }
   }
 
   .card-content {
     padding: $spacing-md;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   .card-title {
@@ -51,6 +76,7 @@
     font-weight: 700;
     margin-bottom: $spacing-sm;
     color: $color-african-black;
+    line-height: 1.3;
   }
 
   .card-description {
@@ -58,6 +84,22 @@
     color: $color-text-muted;
     margin-bottom: $spacing-md;
     line-height: 1.5;
+    flex: 1;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-sm;
+    font-size: 0.8rem;
+    color: $color-text-muted;
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   }
 
   .card-footer {
@@ -89,6 +131,53 @@
 
   .card-title {
     font-size: 1.25rem;
+  }
+}
+
+// Trend video card
+.trend-video-card {
+  @extend .dish-card;
+
+  .card-video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: $color-surface-dark;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  .card-content {
+    padding: $spacing-md;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+    margin-bottom: $spacing-sm;
+  }
+
+  .card-description {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+
+  .video-source {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-size: 0.8rem;
+    color: $color-text-muted;
+    margin-top: $spacing-sm;
+
+    .youtube-icon {
+      color: $color-african-red;
+      font-weight: 700;
+    }
   }
 }
 

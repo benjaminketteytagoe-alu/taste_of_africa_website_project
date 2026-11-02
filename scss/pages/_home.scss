@@ -1,5 +1,5 @@
 // ============================================
-// Home Page Styles
+// Home Page Styles (Mobile First)
 // ============================================
 
 .featured-dishes {
@@ -15,15 +15,598 @@
 }
 
 .home-hero {
-  min-height: 90vh;
+  min-height: 80vh;
+
+  @include respond-to(tablet) {
+    min-height: 90vh;
+  }
 }
 
 .home-section {
-  padding: $spacing-xl 0;
+  padding: $spacing-lg 0;
 
   .container {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @include respond-to(tablet) {
+      padding: 0 $spacing-lg;
+    }
+  }
+}
+
+// ============================================
+// Mobile-First Responsive Overrides
+// ============================================
+
+// Hero section responsive
+.hero-section {
+  @include respond-to(mobile) {
+    min-height: 70vh;
+  }
+}
+
+.hero-content {
+  @include respond-to(mobile) {
+    padding: $spacing-lg $spacing-md;
+
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      align-items: center;
+
+      .btn {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    padding: $spacing-xl $spacing-md;
+
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 3rem);
+    }
+  }
+}
+
+// Hero loop dots responsive
+.hero-loop-dots {
+  @include respond-to(mobile) {
+    bottom: $spacing-md;
+
+    .hero-dot {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+// Video carousel responsive
+.video-carousel-thumbnails {
+  @include respond-to(mobile) {
+    gap: $spacing-xs;
+
+    .video-thumb {
+      width: 90px;
+      height: 50px;
+
+      .play-icon {
+        width: 24px;
+        height: 24px;
+
+        &::after {
+          border-width: 4px 0 4px 7px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    .video-thumb {
+      width: 100px;
+      height: 56px;
+    }
+  }
+}
+
+.video-carousel-main {
+  @include respond-to(mobile) {
+    border-radius: $spacing-sm;
+  }
+}
+
+// Dishes grid responsive
+.dishes-grid {
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: $spacing-lg;
+  }
+}
+
+// Regions grid responsive
+.regions-grid {
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: $spacing-lg;
+  }
+}
+
+// Articles grid responsive
+.articles-grid {
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: $spacing-lg;
+  }
+}
+
+// Section header responsive
+.section-header {
+  @include respond-to(mobile) {
+    margin-bottom: $spacing-lg;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Container responsive
+.container {
+  @include respond-to(mobile) {
+    padding: 0 $spacing-md;
+  }
+
+  @include respond-to(tablet) {
     padding: 0 $spacing-lg;
+  }
+}
+
+// Section padding responsive
+.section {
+  @include respond-to(mobile) {
+    padding: $spacing-lg 0;
+  }
+
+  @include respond-to(tablet) {
+    padding: $spacing-xl 0;
+  }
+}
+
+// Footer responsive
+.footer-grid {
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-xl;
+  }
+}
+
+.footer-bottom {
+  @include respond-to(mobile) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: $spacing-sm;
+  }
+}
+
+// Header responsive
+.header-inner {
+  @include respond-to(mobile) {
+    padding: $spacing-sm $spacing-md;
+  }
+}
+
+// Card content responsive
+.dish-card {
+  .card-content {
+    @include respond-to(mobile) {
+      padding: $spacing-sm $spacing-md;
+    }
+  }
+
+  .card-title {
+    @include respond-to(mobile) {
+      font-size: 1.05rem;
+    }
+  }
+
+  .card-description {
+    @include respond-to(mobile) {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// Newsletter form responsive
+.newsletter-form {
+  @include respond-to(mobile) {
+    flex-direction: column;
+
+    .form-control {
+      width: 100%;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+// Filter bar responsive
+.filter-bar {
+  @include respond-to(mobile) {
+    gap: $spacing-xs;
+    padding: $spacing-sm;
+
+    .filter-btn {
+      padding: $spacing-xs $spacing-sm;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// Social links responsive
+.social-links {
+  @include respond-to(mobile) {
+    gap: $spacing-sm;
+
+    a {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+// Favorites badge responsive
+.favorites-badge {
+  @include respond-to(mobile) {
+    display: none;
+  }
+}
+
+// Breadcrumb responsive
+.breadcrumb {
+  @include respond-to(mobile) {
+    font-size: 0.8rem;
+    gap: $spacing-xs;
+  }
+}
+
+// Two column layout responsive
+.two-column {
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+// Detail content responsive
+.detail-content {
+  @include respond-to(mobile) {
+    padding: $spacing-lg $spacing-md;
+  }
+}
+
+// ============================================
+// Cuisine Gallery
+// ============================================
+
+.cuisine-gallery {
+  background-color: $color-cream-bg;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: $spacing-md;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+  transition: transform $transition-normal, box-shadow $transition-normal;
+  background: $color-african-black;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-elevated;
+  }
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform $transition-normal;
+
+    @include respond-to(mobile) {
+      height: 200px;
+    }
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: $spacing-md;
+    background: linear-gradient(to top, rgba($color-african-black, 0.8), transparent);
+    color: $color-african-white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+// ============================================
+// Trend Article Card (non-video)
+// ============================================
+
+.trend-article-card {
+  @extend .dish-card;
+
+  .card-image {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform $transition-normal;
+
+      @include respond-to(mobile) {
+        height: 180px;
+      }
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  .card-content {
+    padding: $spacing-md;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+    margin-bottom: $spacing-sm;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+}
+
+// ============================================
+// Region Flags
+// ============================================
+
+.region-card {
+  .card-image {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+
+      @include respond-to(mobile) {
+        height: 180px;
+      }
+    }
+
+    .region-flags {
+      position: absolute;
+      bottom: $spacing-sm;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+      background: rgba($color-african-black, 0.6);
+      padding: 6px 12px;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
+
+      .flag-icon {
+        font-size: 1.4rem;
+        line-height: 1;
+        transition: transform $transition-fast;
+        cursor: default;
+
+        &:hover {
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// Brand Logo
+// ============================================
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  text-decoration: none;
+  color: inherit;
+
+  .brand-logo {
+    height: 40px;
+    width: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid $color-african-gold;
+
+    @include respond-to(mobile) {
+      height: 32px;
+    }
+  }
+
+  span {
+    font-family: $font-display;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: $color-african-gold;
+
+    @include respond-to(mobile) {
+      font-size: 1rem;
+    }
+  }
+}
+
+// ============================================
+// Mobile Padding Enhancements
+// ============================================
+
+// Page-level padding for mobile
+main[role="main"] {
+  @include respond-to(mobile) {
+    padding: 0 $spacing-sm;
+  }
+}
+
+// Section padding for mobile
+.section {
+  @include respond-to(mobile) {
+    padding: $spacing-lg $spacing-sm;
+  }
+
+  @include respond-to(tablet) {
+    padding: $spacing-xl 0;
+  }
+}
+
+// Container padding refinement
+.container {
+  @include respond-to(mobile) {
+    padding-left: $spacing-sm;
+    padding-right: $spacing-sm;
+  }
+
+  @include respond-to(tablet) {
+    padding-left: $spacing-md;
+    padding-right: $spacing-md;
+  }
+
+  @include respond-to(desktop) {
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+  }
+}
+
+// Recipe grid mobile
+.recipe-grid {
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+  }
+}
+
+// Recipe hero mobile
+.recipe-hero {
+  @include respond-to(mobile) {
+    padding: $spacing-md 0;
+
+    img {
+      border-radius: $spacing-sm;
+    }
+  }
+}
+
+// Region section mobile
+.region-section {
+  @include respond-to(mobile) {
+    padding: $spacing-lg $spacing-sm;
+
+    .region-content {
+      padding: $spacing-md;
+    }
   }
 }

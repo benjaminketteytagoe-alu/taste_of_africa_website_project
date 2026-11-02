@@ -1,18 +1,288 @@
 // ============================================
-// About Page Styles
+// About Page Styles with Kente Colors
 // ============================================
+
+// Kente color palette
+$kente-gold: #D4AF37;
+$kente-red: #B71C1C;
+$kente-green: #1B5E20;
+$kente-yellow: #F9A825;
+$kente-orange: #E65100;
+$kente-blue: #0D47A1;
 
 .about-page {
   background-color: $color-cream-bg;
 }
 
+// About Hero with Kente gradient
+.about-hero {
+  position: relative;
+  padding: $spacing-xl 0;
+  background: linear-gradient(135deg, $kente-gold 0%, $kente-red 25%, $kente-green 50%, $kente-yellow 75%, $kente-orange 100%);
+  color: $color-african-white;
+  text-align: center;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+
+  .about-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color-african-black, 0.3);
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    padding: 0 $spacing-md;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: $spacing-md;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    color: $color-african-white;
+  }
+
+  .about-hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    color: rgba($color-african-white, 0.95);
+  }
+
+  @include respond-to(mobile) {
+    padding: $spacing-lg 0;
+
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    .about-hero-subtitle {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Mission section
 .mission-section {
   background-color: $color-african-white;
   padding: $spacing-xl 0;
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+
+    @include respond-to(tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .about-text {
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: $spacing-lg;
+      color: $kente-green;
+      position: relative;
+      padding-bottom: $spacing-sm;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: repeating-linear-gradient(
+          to right,
+          $kente-gold 0px,
+          $kente-gold 10px,
+          $kente-red 10px,
+          $kente-red 20px
+        );
+        border-radius: 2px;
+      }
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: $color-african-black;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  .about-image {
+    border-radius: $spacing-md;
+    overflow: hidden;
+    box-shadow: $shadow-elevated;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      background: repeating-linear-gradient(
+        to right,
+        $kente-gold 0px,
+        $kente-gold 8px,
+        $kente-red 8px,
+        $kente-red 16px,
+        $kente-green 16px,
+        $kente-green 24px,
+        $kente-yellow 24px,
+        $kente-yellow 32px
+      );
+      z-index: -1;
+      border-radius: calc(#{$spacing-md} + 4px);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: $spacing-md;
+    }
+  }
+}
+
+// Timeline section with Kente accent
+.kente-section {
+  background: linear-gradient(
+    to bottom,
+    tint($kente-gold, 95%),
+    $color-african-white
+  );
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: repeating-linear-gradient(
+      to right,
+      $kente-gold 0px,
+      $kente-gold 20px,
+      $kente-red 20px,
+      $kente-red 40px,
+      $kente-green 40px,
+      $kente-green 60px,
+      $kente-yellow 60px,
+      $kente-yellow 80px,
+      $kente-orange 80px,
+      $kente-orange 100px,
+      $kente-blue 100px,
+      $kente-blue 120px
+    );
+  }
 }
 
 .timeline-section {
   padding: $spacing-xl 0;
+
+  .timeline-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xl;
+    position: relative;
+
+    .timeline-marker {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: $kente-gold;
+      border: 3px solid $kente-red;
+      margin-top: 6px;
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: calc(100% + 20px);
+        background: linear-gradient(to bottom, $kente-gold, $kente-green);
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+
+    .timeline-text {
+      flex: 1;
+      background: $color-african-white;
+      padding: $spacing-lg;
+      border-radius: $spacing-md;
+      box-shadow: $shadow-card;
+      border-left: 4px solid $kente-green;
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $kente-green;
+        margin-bottom: $spacing-sm;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: $color-african-black;
+      }
+    }
+
+    @include respond-to(mobile) {
+      gap: $spacing-md;
+
+      .timeline-text {
+        padding: $spacing-md;
+
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
 }
 
 .map-landmark-section {
