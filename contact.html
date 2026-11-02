@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Tastes of Africa - Get in touch with us for recipe inquiries, contributions, or feedback.">
+  <title>Contact Us - Tastes of Africa</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" role="banner"><div class="header-inner"><a href="index.html" class="site-brand" aria-label="Tastes of Africa Home"><span class="brand-icon">🌍</span><span>Tastes of Africa</span></a><nav class="main-nav" role="navigation" aria-label="Main navigation"><ul class="nav-links"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="recipes.html" class="nav-link">Recipes</a></li><li><a href="regions.html" class="nav-link">Regions</a></li><li><a href="about.html" class="nav-link">About Us</a></li><li><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li></ul></nav><div style="display:flex;align-items:center;gap:1rem;"><span class="favorites-badge" aria-label="Favorites count">❤️ Favorites (<span id="favoritesCount">0</span>)</span><button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button></div></div></header>
+  <div class="nav-drawer closed" id="navDrawer" role="navigation" aria-label="Mobile navigation"><div class="drawer-inner"><ul class="nav-links"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="recipes.html" class="nav-link">Recipes</a></li><li><a href="regions.html" class="nav-link">Regions</a></li><li><a href="about.html" class="nav-link">About Us</a></li><li><a href="contact.html" class="nav-link active">Contact</a></li></ul></div></div>
+  <main role="main">
+    <section class="section contact-page"><div class="container">
+      <div class="section-header"><h1>Contact Us</h1><p>We'd love to hear from you! Whether you have a recipe to share, a question about African cuisine, or feedback, please get in touch.</p></div>
+      <div class="contact-form-section">
+        <div class="contact-form-card">
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="userName" class="form-label">Full Name *</label>
+              <input type="text" id="userName" name="userName" class="form-control" required placeholder="e.g. Amina Diallo" aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="userEmail" class="form-label">Email Address *</label>
+              <input type="email" id="userEmail" name="userEmail" class="form-control" required placeholder="name@example.com" aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="userCountry" class="form-label">Country *</label>
+              <input type="text" id="userCountry" name="userCountry" list="africanCountries" class="form-control" required placeholder="Type or select a country" aria-required="true">
+              <datalist id="africanCountries">
+                <option value="Nigeria"><option value="Ghana"><option value="Kenya"><option value="Ethiopia"><option value="Morocco"><option value="Rwanda"><option value="South Africa"><option value="Senegal"><option value="Egypt"><option value="Tanzania"><option value="Cameroon"><option value="Uganda"><option value="Mali"><option value="Ivory Coast"><option value="Angola"><option value="Mozambique"><option value="Zimbabwe"><option value="Botswana"><option value="Zambia"><option value="Madagascar"><option value="Tunisia"><option value="Algeria"><option value="Libya"><option value="Sudan"><option value="Somalia"><option value="Ethiopia"><option value="Eritrea"><option value="Djibouti"><option value="Gabon"><option value="Congo"><option value="DR Congo"><option value="Niger"><option value="Burkina Faso"><option value="Guinea"><option value="Sierra Leone"><option value="Liberia"><option value="Gambia"><option value="Mauritania"><option value="Chad"><option value="Central African Republic"><option value="South Sudan"><option value="Malawi"><option value="Lesotho"><option value="Eswatini"><option value="Namibia"><option value="Mauritius"><option value="Seychelles"><option value="Cape Verde"><option value="Comoros"><option value="São Tomé and Príncipe">
+              </datalist>
+            </div>
+            <div class="form-group">
+              <label for="userSubject" class="form-label">Subject *</label>
+              <select id="userSubject" name="userSubject" class="form-control" required aria-required="true">
+                <option value="">Select a subject...</option>
+                <option value="Recipe Inquiry">Recipe Inquiry</option>
+                <option value="Regional Contribution">Regional Contribution</option>
+                <option value="Media & Press">Media & Press</option>
+                <option value="General Feedback">General Feedback</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="userMessage" class="form-label">Message * (minimum 21 characters)</label>
+              <textarea id="userMessage" name="userMessage" rows="6" class="form-control" minlength="21" required placeholder="Write your message here (must exceed 20 characters)..." aria-required="true"></textarea>
+              <span id="charCount" class="char-counter">0 / 20 minimum characters</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+          <div id="formFeedback" class="feedback-banner" hidden aria-live="polite"></div>
+        </div>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-footer" role="contentinfo"><div class="footer-inner"><div class="footer-grid"><div class="footer-section"><h3>Tastes of Africa</h3><p>Celebrating the rich culinary heritage of the African continent.</p><ul class="social-links"><li><a href="#" aria-label="Follow us on Facebook">📘</a></li><li><a href="#" aria-label="Follow us on Instagram">📷</a></li><li><a href="#" aria-label="Follow us on Twitter">🐦</a></li><li><a href="#" aria-label="Follow us on YouTube">🎬</a></li></ul></div><div class="footer-section"><h3>Quick Links</h3><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="recipes.html">Recipes</a></li><li><a href="regions.html">Regions</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-section"><h3>Recipes</h3><ul class="footer-links"><li><a href="recipes/jollof-rice.html">Jollof Rice</a></li><li><a href="recipes/tagine.html">Lamb Tagine</a></li><li><a href="recipes/injera.html">Injera & Doro Wat</a></li><li><a href="recipes/bunny-chow.html">Bunny Chow</a></li><li><a href="recipes/isombe.html">Rwandan Isombe</a></li></ul></div><div class="footer-section footer-newsletter"><h3>Newsletter</h3><p>Subscribe for new recipes and African food trends.</p><form id="newsletterForm" class="newsletter-form" novalidate><label for="newsletterEmail" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label><input type="email" id="newsletterEmail" class="form-control" placeholder="Enter your email" required aria-label="Email address for newsletter"><button type="submit" class="btn btn-gold">Subscribe</button></form><div id="newsletterFeedback" class="newsletter-feedback" hidden aria-live="polite"></div></div></div><div class="footer-bottom"><p>&copy; 2024 Tastes of Africa. All rights reserved.</p><ul class="footer-bottom-links"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div></div></footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+// ============================================
+// About Page Styles
+// ============================================
+
+.about-page {
+  background-color: $color-cream-bg;
+}
+
+.mission-section {
+  background-color: $color-african-white;
+  padding: $spacing-xl 0;
+}
+
+.timeline-section {
+  padding: $spacing-xl 0;
+}
+
+.map-landmark-section {
+  padding: $spacing-xl 0;
+  background-color: $color-african-white;
+}
+
+.landmark-map {
+  max-width: 900px;
+  margin: $spacing-xl auto;
+  border-radius: $spacing-md;
+  overflow: hidden;
+  box-shadow: $shadow-elevated;
+}

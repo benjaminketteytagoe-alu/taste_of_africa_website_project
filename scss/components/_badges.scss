@@ -1,0 +1,65 @@
+// ============================================
+// Badges
+// ============================================
+
+.badge {
+  display: inline-block;
+  padding: $spacing-xs $spacing-sm;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: $spacing-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+// Region badge
+.badge-region {
+  background-color: tint($color-african-gold, 85%);
+  color: shade($color-african-gold, 40%);
+  border: 1px solid $color-african-gold;
+}
+
+// Prep time badge
+.badge-time {
+  background-color: tint($color-african-green, 85%);
+  color: shade($color-african-green, 40%);
+  border: 1px solid $color-african-green;
+}
+
+// Difficulty badges
+.badge-easy {
+  background-color: tint($color-african-green, 80%);
+  color: shade($color-african-green, 50%);
+}
+
+.badge-medium {
+  background-color: tint($color-african-gold, 80%);
+  color: shade($color-african-gold, 40%);
+}
+
+.badge-hard {
+  background-color: tint($color-african-red, 80%);
+  color: shade($color-african-red, 40%);
+}
+
+// Trending badge with pulse animation
+.badge-trending {
+  background-color: $color-african-gold;
+  color: $color-african-black;
+  animation: goldGlow 2s infinite;
+}
+
+// Chef's pick badge
+.badge-chefs-pick {
+  background-color: $color-african-red;
+  color: $color-african-white;
+}
+
+// Badge group
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-sm;
+}

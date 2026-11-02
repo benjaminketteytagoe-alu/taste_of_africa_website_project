@@ -1,0 +1,102 @@
+// ============================================
+// Cards
+// ============================================
+
+.dish-card {
+  background-color: $color-african-white;
+  border: 2px solid transparent;
+  border-radius: $spacing-md;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+  transition: transform $transition-normal, box-shadow $transition-normal, border-color $transition-normal;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: $shadow-elevated;
+    border-color: $color-african-gold;
+  }
+
+  .card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: $color-surface-dark;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-normal;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+
+    .card-favorite {
+      position: absolute;
+      top: $spacing-md;
+      right: $spacing-md;
+      z-index: 2;
+    }
+  }
+
+  .card-content {
+    padding: $spacing-md;
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: $spacing-sm;
+    color: $color-african-black;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+    color: $color-text-muted;
+    margin-bottom: $spacing-md;
+    line-height: 1.5;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-sm;
+    padding-top: $spacing-sm;
+    border-top: 1px solid rgba($color-text-muted, 0.15);
+  }
+}
+
+// Region card variant
+.region-card {
+  @extend .dish-card;
+
+  .card-image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+// Article card variant
+.article-card {
+  @extend .dish-card;
+
+  .card-content {
+    padding: $spacing-lg;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+
+// Hidden state for filtering
+.hidden {
+  display: none;
+}
+
+.recipe-card.hidden {
+  display: none;
+}

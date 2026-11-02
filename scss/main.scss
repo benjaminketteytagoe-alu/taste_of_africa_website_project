@@ -1,0 +1,37 @@
+// ============================================
+// Tastes of Africa - Master SCSS Manifest
+// ============================================
+
+// 1. Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// 2. Base
+@import 'base/reset';
+@import 'base/typography';
+
+// 3. Animations
+@import 'animations/keyframes';
+
+// 4. Components
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/forms';
+@import 'components/tables';
+@import 'components/badges';
+@import 'components/details';
+
+// 5. Layout
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/hero';
+@import 'layout/grid';
+@import 'layout/footer';
+
+// 6. Pages
+@import 'pages/home';
+@import 'pages/recipes';
+@import 'pages/regions';
+@import 'pages/about';
+@import 'pages/contact';

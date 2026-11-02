@@ -1,0 +1,72 @@
+// ============================================
+// Tables (Nutrition Facts)
+// ============================================
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $spacing-lg 0;
+  font-size: 0.95rem;
+  background-color: $color-african-white;
+  border-radius: $spacing-sm;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+
+  caption {
+    caption-side: top;
+    text-align: left;
+    font-family: $font-display;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: $spacing-md;
+    color: $color-african-black;
+    background-color: tint($color-african-gold, 80%);
+    border-bottom: 3px solid $color-african-gold;
+  }
+
+  thead {
+    background-color: $color-surface-dark;
+    color: $color-african-white;
+
+    th {
+      padding: $spacing-sm $spacing-md;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid rgba($color-text-muted, 0.1);
+      transition: background-color $transition-fast;
+
+      &:hover {
+        background-color: tint($color-african-gold, 95%);
+      }
+
+      // Zebra striping
+      &:nth-child(even) {
+        background-color: rgba($color-cream-bg, 0.5);
+      }
+    }
+
+    td {
+      padding: $spacing-sm $spacing-md;
+      color: $color-text-muted;
+    }
+
+    td:first-child {
+      font-weight: 600;
+      color: $color-african-black;
+    }
+  }
+}
+
+// Responsive table wrapper
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}

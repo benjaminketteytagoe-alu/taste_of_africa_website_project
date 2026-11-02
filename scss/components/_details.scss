@@ -1,0 +1,128 @@
+// ============================================
+// Details / Summary Accordion
+// ============================================
+
+details {
+  background-color: $color-african-white;
+  border: 2px solid rgba($color-text-muted, 0.15);
+  border-radius: $spacing-sm;
+  margin-bottom: $spacing-md;
+  overflow: hidden;
+  transition: border-color $transition-fast;
+
+  &[open] {
+    border-color: $color-african-gold;
+  }
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md $spacing-lg;
+  font-family: $font-display;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: $color-african-black;
+  cursor: pointer;
+  list-style: none;
+  transition: background-color $transition-fast, color $transition-fast;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::before {
+    content: '\25B6';
+    display: inline-block;
+    margin-right: $spacing-sm;
+    font-size: 0.8rem;
+    color: $color-african-gold;
+    transition: transform $transition-fast;
+  }
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, $color-african-gold, transparent);
+    margin-left: $spacing-md;
+    opacity: 0.3;
+  }
+
+  &:hover {
+    background-color: tint($color-african-gold, 95%);
+  }
+
+  &:focus-visible {
+    outline: 3px solid $color-african-gold;
+    outline-offset: -3px;
+  }
+}
+
+details[open] > summary {
+  background-color: tint($color-african-gold, 90%);
+  color: shade($color-african-gold, 30%);
+  border-bottom: 2px solid $color-african-gold;
+
+  &::before {
+    transform: rotate(90deg);
+  }
+}
+
+// Accordion content
+details > .accordion-content {
+  padding: $spacing-lg;
+  animation: fadeInUp 0.3s ease;
+
+  p {
+    margin-bottom: $spacing-md;
+  }
+
+  ol,
+  ul {
+    padding-left: $spacing-lg;
+
+    li {
+      margin-bottom: $spacing-sm;
+      color: $color-text-muted;
+      line-height: 1.6;
+    }
+
+    li::marker {
+      color: $color-african-gold;
+    }
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  ul {
+    list-style: disc;
+  }
+}
+
+// Golden bullet list (for ingredients)
+.golden-list {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    position: relative;
+    padding-left: $spacing-lg;
+    margin-bottom: $spacing-sm;
+    color: $color-text-muted;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: $spacing-sm;
+      top: 0.6em;
+      width: 8px;
+      height: 8px;
+      background-color: $color-african-gold;
+      border-radius: 50%;
+    }
+  }
+}

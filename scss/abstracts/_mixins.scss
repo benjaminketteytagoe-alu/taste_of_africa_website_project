@@ -1,0 +1,67 @@
+// ============================================
+// Reusable Sass Mixins
+// ============================================
+
+// Responsive Media Queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: #{$bp-mobile}) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: #{$bp-tablet}) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: #{$bp-desktop}) {
+      @content;
+    }
+  } @else if $breakpoint == wide {
+    @media (min-width: #{$bp-wide}) {
+      @content;
+    }
+  }
+}
+
+// Card Elevation & Lift
+@mixin card-hover-lift($lift: -6px, $border-color: $color-african-gold) {
+  transition: transform $transition-normal, box-shadow $transition-normal, border-color $transition-normal;
+  &:hover {
+    transform: translateY($lift);
+    box-shadow: $shadow-elevated;
+    border-color: $border-color;
+  }
+}
+
+// Flex & Grid Layout Helpers
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin responsive-grid($min-col: 280px, $gap: 2rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-col, 1fr));
+  gap: $gap;
+}
+
+// African Accent Border / Underline
+@mixin kente-accent-underline($height: 4px, $color: $color-african-gold) {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 48px;
+    height: $height;
+    background: $color;
+    border-radius: 2px;
+    transition: width $transition-fast;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}

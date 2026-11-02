@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tastes of Africa - Celebrating the rich culinary heritage of the African continent with authentic recipes from West, North, East, Central, and Southern Africa.">
+  <title>Tastes of Africa - Experience the Vibrant Flavors of Africa</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="site-brand" aria-label="Tastes of Africa Home">
+        <span class="brand-icon">🌍</span>
+        <span>Tastes of Africa</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+          <li><a href="recipes.html" class="nav-link">Recipes</a></li>
+          <li><a href="regions.html" class="nav-link">Regions</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <span class="favorites-badge" aria-label="Favorites count">
+          ❤️ Favorites (<span id="favoritesCount">0</span>)
+        </span>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="nav-drawer closed" id="navDrawer" role="navigation" aria-label="Mobile navigation">
+    <div class="drawer-inner">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+        <li><a href="recipes.html" class="nav-link">Recipes</a></li>
+        <li><a href="regions.html" class="nav-link">Regions</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main role="main">
+    <!-- Hero Section -->
+    <section class="hero-section home-hero" aria-label="Welcome to Tastes of Africa">
+      <div class="hero-content">
+        <h1>Experience the Vibrant Flavors of Africa</h1>
+        <p class="hero-subtitle">Discover ancestral culinary heritage, seasonal indigenous ingredients, and the bold tastes that define the African continent — from the spice markets of Marrakech to the bustling kitchens of Lagos.</p>
+        <div class="hero-cta">
+          <a href="recipes.html" class="btn btn-primary">Explore Recipes</a>
+          <a href="regions.html" class="btn btn-secondary">Culinary Regions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Video -->
+    <section class="section" aria-label="Introduction video">
+      <div class="container">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Introduction to African Culinary Heritage" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Dishes -->
+    <section class="section featured-dishes home-section" aria-label="Featured dishes">
+      <div class="container">
+        <div class="section-header">
+          <h2>Signature Dishes</h2>
+          <p>Explore the most iconic recipes that represent the diversity of African cuisine.</p>
+        </div>
+        <div class="dishes-grid">
+          <!-- Jollof Rice -->
+          <figure class="dish-card recipe-card" data-region="west-africa" data-id="jollof-rice" data-name="Jollof Rice">
+            <div class="card-image">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%232A1810' width='800' height='600'/%3E%3Cpolygon points='0,0 800,0 800,40 0,560' fill='%23D4AF37' opacity='0.1'/%3E%3Cpolygon points='0,600 800,600 800,560 0,40' fill='%23B71C1C' opacity='0.1'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='36' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3EJollof Rice%3C/text%3E%3Ctext x='400' y='320' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3EWest Africa%3C/text%3E%3C/svg%3E" alt="Placeholder for West African Jollof Rice served with fried plantains and grilled chicken" loading="lazy">
+              <button class="btn-favorite card-favorite" data-id="jollof-rice" data-name="Jollof Rice" aria-label="Add Jollof Rice to favorites"></button>
+            </div>
+            <figcaption class="card-content">
+              <span class="badge badge-region">West Africa</span>
+              <h3 class="card-title">Ghanaian/Nigerian Jollof Rice</h3>
+              <p class="card-description">A vibrant one-pot rice dish cooked in a rich tomato and pepper sauce, flavored with scotch bonnets and aromatic spices.</p>
+              <div class="card-footer">
+                <a href="recipes/jollof-rice.html" class="btn btn-gold">View Recipe</a>
+              </div>
+            </figcaption>
+          </figure>
+
+          <!-- Tagine -->
+          <figure class="dish-card recipe-card" data-region="north-africa" data-id="tagine" data-name="Lamb Tagine">
+            <div class="card-image">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%232A1810' width='800' height='600'/%3E%3Cpolygon points='0,0 800,0 800,40 0,560' fill='%23D4AF37' opacity='0.1'/%3E%3Cpolygon points='0,600 800,600 800,560 0,40' fill='%23B71C1C' opacity='0.1'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='36' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3ELamb Tagine%3C/text%3E%3Ctext x='400' y='320' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3ENorth Africa%3C/text%3E%3C/svg%3E" alt="Placeholder for Moroccan Lamb and Apricot Tagine with couscous" loading="lazy">
+              <button class="btn-favorite card-favorite" data-id="tagine" data-name="Lamb Tagine" aria-label="Add Lamb Tagine to favorites"></button>
+            </div>
+            <figcaption class="card-content">
+              <span class="badge badge-region">North Africa</span>
+              <h3 class="card-title">Moroccan Lamb & Apricot Tagine</h3>
+              <p class="card-description">A slow-cooked stew of tender lamb, sweet apricots, and warm spices like cinnamon and saffron, served over fluffy couscous.</p>
+              <div class="card-footer">
+                <a href="recipes/tagine.html" class="btn btn-gold">View Recipe</a>
+              </div>
+            </figcaption>
+          </figure>
+
+          <!-- Injera -->
+          <figure class="dish-card recipe-card" data-region="east-africa" data-id="injera" data-name="Injera with Doro Wat">
+            <div class="card-image">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%232A1810' width='800' height='600'/%3E%3Cpolygon points='0,0 800,0 800,40 0,560' fill='%23D4AF37' opacity='0.1'/%3E%3Cpolygon points='0,600 800,600 800,560 0,40' fill='%23B71C1C' opacity='0.1'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='36' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3EInjera%3C/text%3E%3Ctext x='400' y='320' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3EEast Africa%3C/text%3E%3C/svg%3E" alt="Placeholder for Ethiopian Injera with Doro Wat chicken stew" loading="lazy">
+              <button class="btn-favorite card-favorite" data-id="injera" data-name="Injera with Doro Wat" aria-label="Add Injera with Doro Wat to favorites"></button>
+            </div>
+            <figcaption class="card-content">
+              <span class="badge badge-region">East Africa</span>
+              <h3 class="card-title">Ethiopian Injera & Doro Wat</h3>
+              <p class="card-description">A spongy teff flatbread served with a spicy chicken stew infused with berbere spice and niter kibbeh.</p>
+              <div class="card-footer">
+                <a href="recipes/injera.html" class="btn btn-gold">View Recipe</a>
+              </div>
+            </figcaption>
+          </figure>
+
+          <!-- Bunny Chow -->
+          <figure class="dish-card recipe-card" data-region="southern-africa" data-id="bunny-chow" data-name="Durban Bunny Chow">
+            <div class="card-image">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%232A1810' width='800' height='600'/%3E%3Cpolygon points='0,0 800,0 800,40 0,560' fill='%23D4AF37' opacity='0.1'/%3E%3Cpolygon points='0,600 800,600 800,560 0,40' fill='%23B71C1C' opacity='0.1'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='36' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3EBunny Chow%3C/text%3E%3Ctext x='400' y='320' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3ESouthern Africa%3C/text%3E%3C/svg%3E" alt="Placeholder for South African Durban Bunny Chow with curry" loading="lazy">
+              <button class="btn-favorite card-favorite" data-id="bunny-chow" data-name="Durban Bunny Chow" aria-label="Add Durban Bunny Chow to favorites"></button>
+            </div>
+            <figcaption class="card-content">
+              <span class="badge badge-region">Southern Africa</span>
+              <h3 class="card-title">South African Durban Bunny Chow</h3>
+              <p class="card-description">A hollowed loaf of white bread filled with spicy Indian-inspired curry, a Durban street food classic.</p>
+              <div class="card-footer">
+                <a href="recipes/bunny-chow.html" class="btn btn-gold">View Recipe</a>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore by Region -->
+    <section class="section explore-regions home-section" aria-label="Explore by culinary region">
+      <div class="container">
+        <div class="section-header">
+          <h2>Explore by Culinary Region</h2>
+          <p>Each region of Africa offers a unique flavor profile shaped by history, climate, and culture.</p>
+        </div>
+        <div class="regions-grid">
+          <figure class="region-card">
+            <div class="card-image">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%231B5E20' width='800' height='600'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='40' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3EWest Africa%3C/text%3E%3Ctext x='400' y='330' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3EJollof, Egusi, Fufu%3C/text%3E%3C/svg%3E" alt="West African cuisine featuring jollof rice, egusi soup, and fufu" loading="lazy">
+            </div>
+            <figcaption class="card-content">
+              <h3 class="card-title">West Africa</h3>
+              <p class="card-description">Bold flavors with scotch bonnets, palm oil, and fermented locust beans. Home of jollof rice and egusi soup.</p>
+              <a href="regions.html#west-africa" class="btn btn-gold">Explore Region</a>
+            </figcaption>
+          </figure>
+
+          <figure class="region-card">
+            <div class="card-image">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%23B71C1C' width='800' height='600'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='40' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3ENorth Africa%3C/text%3E%3Ctext x='400' y='330' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3ETagines, Couscous, Harissa%3C/text%3E%3C/svg%3E" alt="North African cuisine featuring tagines, couscous, and harissa" loading="lazy">
+            </div>
+            <figcaption class="card-content">
+              <h3 class="card-title">North Africa (The Maghreb)</h3>
+              <p class="card-description">Aromatic tagines, fluffy couscous, ras el hanout, and preserved lemons from Morocco to Egypt.</p>
+              <a href="regions.html#north-africa" class="btn btn-gold">Explore Region</a>
+            </figcaption>
+          </figure>
+
+          <figure class="region-card">
+            <div class="card-image">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%23D4AF37' width='800' height='600'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='40' fill='%23121212' text-anchor='middle' font-weight='bold'%3EEast Africa%3C/text%3E%3Ctext x='400' y='330' font-family='sans-serif' font-size='24' fill='%23121212' text-anchor='middle'%3EInjera, Berbere, Ugali%3C/text%3E%3C/svg%3E" alt="East African cuisine featuring injera, berbere spice, and ugali" loading="lazy">
+            </div>
+            <figcaption class="card-content">
+              <h3 class="card-title">East Africa & The Horn</h3>
+              <p class="card-description">Teff injera, doro wat, berbere spice, and coconut fish curries of the Swahili coast.</p>
+              <a href="regions.html#east-africa" class="btn btn-gold">Explore Region</a>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Food Trends -->
+    <section class="section food-trends home-section" aria-label="Latest food trends">
+      <div class="container">
+        <div class="section-header">
+          <h2>Latest Food Trends</h2>
+          <p>Stay updated on the latest movements in African cuisine and global food culture.</p>
+        </div>
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="card-content">
+              <span class="badge badge-trending">Trending</span>
+              <h3 class="card-title">The Global Rise of Fonio & Ancient African Grains</h3>
+              <p class="card-description">From West African farms to global tables, <mark>Fonio</mark> is gaining recognition as a superfood grain with incredible nutritional value and sustainability.</p>
+              <a href="#" class="btn btn-gold">Read More</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-content">
+              <span class="badge badge-chefs-pick">Chef's Pick</span>
+              <h3 class="card-title">Contemporary Plant-Based Adaptations of Traditional Stews</h3>
+              <p class="card-description">Modern chefs are reimagining classic African stews with plant-based proteins while preserving the bold flavors of <mark>Berbere</mark> and other traditional spice blends.</p>
+              <a href="#" class="btn btn-gold">Read More</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="card-content">
+              <span class="badge badge-trending">Trending</span>
+              <h3 class="card-title">Pan-African Fine Dining: Michelin Recognition</h3>
+              <p class="card-description">African chefs are earning Michelin stars by elevating indigenous ingredients like <mark>Moringa</mark> and indigenous grains to fine dining excellence.</p>
+              <a href="#" class="btn btn-gold">Read More</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Tastes of Africa</h3>
+          <p>Celebrating the rich culinary heritage of the African continent through authentic recipes, cultural stories, and community.</p>
+          <ul class="social-links">
+            <li><a href="#" aria-label="Follow us on Facebook">📘</a></li>
+            <li><a href="#" aria-label="Follow us on Instagram">📷</a></li>
+            <li><a href="#" aria-label="Follow us on Twitter">🐦</a></li>
+            <li><a href="#" aria-label="Follow us on YouTube">🎬</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="regions.html">Regions</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Recipes</h3>
+          <ul class="footer-links">
+            <li><a href="recipes/jollof-rice.html">Jollof Rice</a></li>
+            <li><a href="recipes/tagine.html">Lamb Tagine</a></li>
+            <li><a href="recipes/injera.html">Injera & Doro Wat</a></li>
+            <li><a href="recipes/bunny-chow.html">Bunny Chow</a></li>
+            <li><a href="recipes/isombe.html">Rwandan Isombe</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section footer-newsletter">
+          <h3>Newsletter</h3>
+          <p>Subscribe for new recipes, culinary stories, and African food trends.</p>
+          <form id="newsletterForm" class="newsletter-form" novalidate>
+            <label for="newsletterEmail" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label>
+            <input type="email" id="newsletterEmail" class="form-control" placeholder="Enter your email" required aria-label="Email address for newsletter">
+            <button type="submit" class="btn btn-gold">Subscribe</button>
+          </form>
+          <div id="newsletterFeedback" class="newsletter-feedback" hidden aria-live="polite"></div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Tastes of Africa. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

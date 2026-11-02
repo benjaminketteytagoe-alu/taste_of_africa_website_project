@@ -1,0 +1,131 @@
+// ============================================
+// Navigation
+// ============================================
+
+.main-nav {
+  // Desktop navigation
+  @include respond-to(tablet) {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .nav-link {
+      position: relative;
+      font-family: $font-body;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: $color-african-white;
+      text-decoration: none;
+      padding: $spacing-xs 0;
+      transition: color $transition-fast;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $color-african-gold;
+        transition: width $transition-normal;
+      }
+
+      &:hover,
+      &:focus {
+        color: $color-african-gold;
+      }
+
+      &:hover::after,
+      &:focus::after {
+        width: 100%;
+      }
+
+      &.active {
+        color: $color-african-gold;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Mobile navigation drawer
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: $color-surface-dark;
+  z-index: 1001;
+  transform: translateX(100%);
+  transition: transform $transition-normal;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+
+  &.open {
+    transform: translateX(0);
+    animation: drawerSlide 0.3s ease forwards;
+  }
+
+  &.closed {
+    transform: translateX(100%);
+  }
+
+  .drawer-inner {
+    padding: $spacing-xl $spacing-lg;
+  }
+
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .nav-link {
+      display: block;
+      padding: $spacing-md 0;
+      font-family: $font-body;
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: $color-african-white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba($color-african-white, 0.1);
+      transition: color $transition-fast, padding-left $transition-fast;
+
+      &:hover,
+      &:focus {
+        color: $color-african-gold;
+        padding-left: $spacing-sm;
+      }
+
+      &.active {
+        color: $color-african-gold;
+      }
+    }
+  }
+}
+
+// Overlay for mobile drawer
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  &.active {
+    display: block;
+  }
+}

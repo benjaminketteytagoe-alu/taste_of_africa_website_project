@@ -1,0 +1,144 @@
+// ============================================
+// Buttons
+// ============================================
+
+// Base button styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-lg;
+  font-family: $font-body;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: $spacing-sm;
+  cursor: pointer;
+  transition: all $transition-fast;
+  text-decoration: none;
+  line-height: 1.4;
+
+  &:focus-visible {
+    outline: 3px solid $color-african-gold;
+    outline-offset: 2px;
+  }
+}
+
+// Primary CTA Button
+.btn-primary {
+  background-color: $color-african-red;
+  color: $color-african-white;
+  border-color: $color-african-red;
+
+  &:hover,
+  &:focus {
+    background-color: shade($color-african-red, 15%);
+    border-color: shade($color-african-red, 15%);
+    transform: translateY(-2px);
+    box-shadow: $shadow-elevated;
+  }
+}
+
+// Secondary CTA Button
+.btn-secondary {
+  background-color: transparent;
+  color: $color-african-white;
+  border-color: $color-african-white;
+
+  &:hover,
+  &:focus {
+    background-color: $color-african-white;
+    color: $color-african-black;
+    transform: translateY(-2px);
+  }
+}
+
+// Gold accent button
+.btn-gold {
+  background-color: $color-african-gold;
+  color: $color-african-black;
+  border-color: $color-african-gold;
+
+  &:hover,
+  &:focus {
+    background-color: shade($color-african-gold, 10%);
+    border-color: shade($color-african-gold, 10%);
+    transform: translateY(-2px);
+    box-shadow: $shadow-gold-glow;
+  }
+}
+
+// Filter Pills
+.filter-btn {
+  padding: $spacing-sm $spacing-md;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: transparent;
+  color: $color-text-muted;
+  border: 2px solid $color-text-muted;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: $color-african-gold;
+    color: $color-african-gold;
+  }
+
+  &.active {
+    background-color: $color-african-gold;
+    color: $color-african-black;
+    border-color: $color-african-gold;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $color-african-gold;
+    outline-offset: 2px;
+  }
+}
+
+// Favorite Heart Button
+.btn-favorite {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: $color-african-white;
+  border: 2px solid $color-text-muted;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all $transition-fast;
+  position: relative;
+
+  &::before {
+    content: '\2661';
+    font-size: 1.2rem;
+    color: $color-text-muted;
+    transition: all $transition-fast;
+  }
+
+  &:hover {
+    border-color: $color-african-red;
+    transform: scale(1.1);
+  }
+
+  &.favorited {
+    border-color: $color-african-red;
+    background-color: tint($color-african-red, 90%);
+
+    &::before {
+      color: $color-african-red;
+    }
+  }
+
+  &.pulse {
+    animation: heartPulse 0.6s ease;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $color-african-gold;
+    outline-offset: 2px;
+  }
+}

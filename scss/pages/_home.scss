@@ -1,0 +1,29 @@
+// ============================================
+// Home Page Styles
+// ============================================
+
+.featured-dishes {
+  background-color: $color-cream-bg;
+}
+
+.explore-regions {
+  background-color: $color-african-white;
+}
+
+.food-trends {
+  background-color: tint($color-african-gold, 92%);
+}
+
+.home-hero {
+  min-height: 90vh;
+}
+
+.home-section {
+  padding: $spacing-xl 0;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+  }
+}

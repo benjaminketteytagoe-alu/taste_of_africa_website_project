@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="West African Jollof Rice recipe - A vibrant one-pot rice dish cooked in rich tomato and pepper sauce with scotch bonnets and aromatic spices.">
+  <title>Jollof Rice - Tastes of Africa</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="../index.html" class="site-brand" aria-label="Tastes of Africa Home">
+        <span class="brand-icon">🌍</span>
+        <span>Tastes of Africa</span>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../recipes.html" class="nav-link active" aria-current="page">Recipes</a></li>
+          <li><a href="../regions.html" class="nav-link">Regions</a></li>
+          <li><a href="../about.html" class="nav-link">About Us</a></li>
+          <li><a href="../contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <span class="favorites-badge" aria-label="Favorites count">
+          ❤️ Favorites (<span id="favoritesCount">0</span>)
+        </span>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-drawer closed" id="navDrawer" role="navigation" aria-label="Mobile navigation">
+    <div class="drawer-inner">
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../recipes.html" class="nav-link active">Recipes</a></li>
+        <li><a href="../regions.html" class="nav-link">Regions</a></li>
+        <li><a href="../about.html" class="nav-link">About Us</a></li>
+        <li><a href="../contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main role="main">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="../recipes.html">Recipes</a>
+        <span class="separator">›</span>
+        <span class="current">Jollof Rice</span>
+      </nav>
+
+      <!-- Recipe Hero -->
+      <section class="recipe-hero" aria-label="Recipe overview">
+        <div style="display:grid;grid-template-columns:1fr;gap:2rem;@media(min-width:768px){grid-template-columns:1fr 1fr;}">
+          <div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%232A1810' width='800' height='600'/%3E%3Cpolygon points='0,0 800,0 800,40 0,560' fill='%23D4AF37' opacity='0.1'/%3E%3Cpolygon points='0,600 800,600 800,560 0,40' fill='%23B71C1C' opacity='0.1'/%3E%3Ctext x='400' y='280' font-family='sans-serif' font-size='36' fill='%23FAF7F2' text-anchor='middle' font-weight='bold'%3EJollof Rice%3C/text%3E%3Ctext x='400' y='320' font-family='sans-serif' font-size='24' fill='%23D4AF37' text-anchor='middle'%3EWest Africa%3C/text%3E%3C/svg%3E" alt="West African Jollof Rice served with fried plantains and grilled chicken" loading="lazy" style="width:100%;border-radius:8px;">
+          </div>
+          <div>
+            <span class="badge badge-region">West Africa</span>
+            <h1>Ghanaian/Nigerian Jollof Rice</h1>
+            <button class="btn-favorite" data-id="jollof-rice" data-name="Jollof Rice" aria-label="Add Jollof Rice to favorites" style="margin:1rem 0;"></button>
+            <div class="recipe-meta" style="flex-direction:column;">
+              <div class="badge-group">
+                <span class="badge badge-time">⏱ Prep: 20 min</span>
+                <span class="badge badge-time">🍳 Cook: 45 min</span>
+                <span class="badge badge-medium">Medium</span>
+              </div>
+              <p><strong>Servings:</strong> 6-8 people</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cultural History -->
+      <section class="detail-content" aria-label="Cultural history">
+        <h2>Cultural History & Significance</h2>
+        <p>Jollof rice is one of the most iconic dishes in West African cuisine, with a heated and loving rivalry between Nigeria and Ghana over who makes it best. Originating from the Wolof people of Senegal, the dish spread across the West African coast through trade routes and colonial connections. Today, it is the centerpiece of celebrations, parties, and family gatherings across the region.</p>
+        <p>The dish is characterized by its vibrant red-orange color from the tomato and pepper base, with each family adding their own secret blend of spices. The smoky flavor achieved through the rice cooking near the heat source gives it its distinctive taste that has made it a global phenomenon.</p>
+      </section>
+
+      <!-- Cooking Steps -->
+      <section class="cooking-steps detail-content" aria-label="Cooking steps">
+        <h2>Cooking Steps</h2>
+        <details>
+          <summary>Phase 1: Ingredient Prep & Marinade</summary>
+          <div class="accordion-content">
+            <ol>
+              <li>Rinse the long-grain rice thoroughly in cold water until the water runs clear. Drain and set aside.</li>
+              <li>Blend tomatoes, red bell peppers, scotch bonnet peppers, onions, and garlic into a smooth puree.</li>
+              <li>Chop additional onions for sautéing and mince fresh garlic and ginger.</li>
+              <li>Prepare the stock by dissolving bouillon cubes in hot water.</li>
+            </ol>
+          </div>
+        </details>
+        <details>
+          <summary>Phase 2: Sauce Base & Browning</summary>
+          <div class="accordion-content">
+            <ol>
+              <li>Heat vegetable oil in a large pot over medium heat. Add chopped onions and sauté until golden.</li>
+              <li>Pour in the blended tomato puree and cook for 15-20 minutes, stirring occasionally, until the sauce reduces and darkens.</li>
+              <li>Add curry powder, thyme, cayenne pepper, and salt. Stir well and cook for another 5 minutes.</li>
+              <li>The sauce should be thick and rich, with oil separating at the edges.</li>
+            </ol>
+          </div>
+        </details>
+        <details>
+          <summary>Phase 3: Simmering & Slow Cooking</summary>
+          <div class="accordion-content">
+            <ol>
+              <li>Add the rinsed rice to the sauce and stir to coat evenly with the tomato mixture.</li>
+              <li>Pour in the hot stock gradually — the liquid should just cover the rice by about half an inch.</li>
+              <li>Bring to a boil, then reduce heat to low. Cover tightly with foil and then the lid to trap steam.</li>
+              <li>Cook for 30-35 minutes without lifting the lid. The rice should absorb all the liquid and become tender.</li>
+              <li>For the signature smoky flavor, let the bottom layer caramelize slightly in the last 5 minutes.</li>
+            </ol>
+          </div>
+        </details>
+        <details>
+          <summary>Phase 4: Plating & Traditional Accompaniments</summary>
+          <div class="accordion-content">
+            <ol>
+              <li>Fluff the rice gently with a fork, mixing the slightly burnt bottom layer (socarrat) into the rice.</li>
+              <li>Plate the jollof rice and serve with fried plantains, grilled chicken, or fried fish.</li>
+              <li>Garnish with sliced fresh tomatoes, onions, and hot pepper sauce on the side.</li>
+              <li>Traditionally served with a side of salad or coleslaw for contrast.</li>
+            </ol>
+          </div>
+        </details>
+      </section>
+
+      <!-- Ingredients -->
+      <section class="ingredients-section detail-content" aria-label="Ingredients">
+        <h2>Ingredients</h2>
+        <ul class="golden-list">
+          <li>3 cups long-grain parboiled rice</li>
+          <li>4 large ripe tomatoes</li>
+          <li>2 red bell peppers</li>
+          <li>2-3 scotch bonnet peppers (to taste)</li>
+          <li>2 large onions (1 blended, 1 chopped)</li>
+          <li>4 cloves garlic, minced</li>
+          <li>1 inch fresh ginger, grated</li>
+          <li>1/2 cup vegetable oil</li>
+          <li>3 cups chicken or vegetable stock</li>
+          <li>2 tablespoons curry powder</li>
+          <li>1 teaspoon dried thyme</li>
+          <li>1 teaspoon cayenne pepper</li>
+          <li>2 bouillon cubes</li>
+          <li>Salt and black pepper to taste</li>
+          <li>Bay leaves (optional)</li>
+        </ul>
+      </section>
+
+      <!-- Equipment -->
+      <section class="equipment-section detail-content" aria-label="Equipment">
+        <h2>Equipment</h2>
+        <ol>
+          <li>Large heavy-bottomed pot with tight-fitting lid</li>
+          <li>Blender or food processor</li>
+          <li>Wooden spoon for stirring</li>
+          <li>Measuring cups and spoons</li>
+          <li>Knife and cutting board</li>
+          <li>Aluminum foil (for trapping steam)</li>
+        </ol>
+      </section>
+
+      <!-- Nutrition -->
+      <section class="nutrition-section detail-content" aria-label="Nutritional information">
+        <h2>Nutritional Facts</h2>
+        <div class="table-responsive">
+          <table class="nutrition-table">
+            <caption>Nutritional Facts (per serving)</caption>
+            <thead>
+              <tr><th>Nutrient</th><th>Amount</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Calories</td><td>380 kcal</td></tr>
+              <tr><td>Protein</td><td>8 g</td></tr>
+              <tr><td>Carbohydrates</td><td>58 g</td></tr>
+              <tr><td>Dietary Fiber</td><td>3 g</td></tr>
+              <tr><td>Fat</td><td>12 g</td></tr>
+              <tr><td>Sodium</td><td>420 mg</td></tr>
+              <tr><td>Iron</td><td>2.1 mg</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Video -->
+      <section class="video-section detail-content" aria-label="Cooking video">
+        <h2>Cooking Tutorial</h2>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="How to Make West African Jollof Rice - Step by Step Tutorial" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </section>
+
+      <!-- Map -->
+      <section class="map-section detail-content" aria-label="Country of origin map">
+        <h2>Country of Origin</h2>
+        <div class="landmark-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537057.496848738!2d-10.0!3d8.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec176c50076e121%3A0x4c39e9e9f36e7e6c!2sWest%20Africa!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen loading="lazy" title="Map showing West Africa - origin of Jollof Rice"></iframe>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Tastes of Africa</h3>
+          <p>Celebrating the rich culinary heritage of the African continent.</p>
+          <ul class="social-links">
+            <li><a href="#" aria-label="Follow us on Facebook">📘</a></li>
+            <li><a href="#" aria-label="Follow us on Instagram">📷</a></li>
+            <li><a href="#" aria-label="Follow us on Twitter">🐦</a></li>
+            <li><a href="#" aria-label="Follow us on YouTube">🎬</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../recipes.html">Recipes</a></li>
+            <li><a href="../regions.html">Regions</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Recipes</h3>
+          <ul class="footer-links">
+            <li><a href="jollof-rice.html">Jollof Rice</a></li>
+            <li><a href="tagine.html">Lamb Tagine</a></li>
+            <li><a href="injera.html">Injera & Doro Wat</a></li>
+            <li><a href="bunny-chow.html">Bunny Chow</a></li>
+            <li><a href="isombe.html">Rwandan Isombe</a></li>
+          </ul>
+        </div>
+        <div class="footer-section footer-newsletter">
+          <h3>Newsletter</h3>
+          <p>Subscribe for new recipes and African food trends.</p>
+          <form id="newsletterForm" class="newsletter-form" novalidate>
+            <label for="newsletterEmail" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label>
+            <input type="email" id="newsletterEmail" class="form-control" placeholder="Enter your email" required aria-label="Email address for newsletter">
+            <button type="submit" class="btn btn-gold">Subscribe</button>
+          </form>
+          <div id="newsletterFeedback" class="newsletter-feedback" hidden aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Tastes of Africa. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

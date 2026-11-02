@@ -1,0 +1,25 @@
+// ============================================
+// Regions Page Styles
+// ============================================
+
+.regions-showcase {
+  background-color: $color-cream-bg;
+}
+
+.region-section {
+  padding: $spacing-xl 0;
+  border-bottom: 2px solid rgba($color-african-gold, 0.2);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.region-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.region-spices {
+  margin: $spacing-lg 0;
+}

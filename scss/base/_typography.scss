@@ -1,0 +1,112 @@
+// ============================================
+// Typography & Google Fonts
+// ============================================
+
+// Google Fonts import
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+// Body styles
+body {
+  font-family: $font-body;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-african-black;
+  background-color: $color-cream-bg;
+}
+
+// Fluid headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-display;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $color-african-black;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+h4 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+h6 {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+
+// Accent headings
+.accent-heading {
+  font-family: $font-accent;
+  font-style: italic;
+}
+
+// Paragraphs
+p {
+  margin-bottom: $spacing-md;
+  color: $color-text-muted;
+}
+
+// Links
+a {
+  color: $color-african-red;
+  transition: color $transition-fast;
+
+  &:hover,
+  &:focus {
+    color: $color-african-gold;
+  }
+}
+
+// Mark highlights
+mark {
+  background-color: tint($color-african-gold, 40%);
+  color: $color-african-black;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $spacing-xs;
+  font-weight: 600;
+}
+
+// Blockquotes
+blockquote {
+  font-family: $font-accent;
+  font-style: italic;
+  font-size: 1.15rem;
+  border-left: 4px solid $color-african-gold;
+  padding: $spacing-md $spacing-lg;
+  margin: $spacing-lg 0;
+  background-color: rgba($color-african-gold, 0.05);
+  border-radius: 0 $spacing-sm $spacing-sm 0;
+  color: $color-african-black;
+}
+
+// Horizontal rule
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    $color-african-red,
+    $color-african-gold,
+    $color-african-green
+  );
+  margin: $spacing-xl 0;
+  border-radius: 1px;
+}

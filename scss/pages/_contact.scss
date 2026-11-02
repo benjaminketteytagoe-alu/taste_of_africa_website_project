@@ -1,0 +1,20 @@
+// ============================================
+// Contact Page Styles
+// ============================================
+
+.contact-page {
+  background-color: $color-cream-bg;
+}
+
+.contact-form-section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: $spacing-xl 0;
+}
+
+.contact-form-card {
+  background-color: $color-african-white;
+  padding: $spacing-xl;
+  border-radius: $spacing-md;
+  box-shadow: $shadow-card;
+}
