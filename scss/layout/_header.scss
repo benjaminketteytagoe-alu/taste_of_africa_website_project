@@ -15,9 +15,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $spacing-md $spacing-lg;
+  padding: $spacing-sm $spacing-md;
   max-width: 1400px;
   margin: 0 auto;
+
+  @include respond-to(tablet) {
+    padding: $spacing-md $spacing-lg;
+  }
 }
 
 // Brand / Logo
@@ -30,6 +34,7 @@
   font-size: 1.3rem;
   color: $color-african-white;
   text-decoration: none;
+  white-space: nowrap;
   transition: color $transition-fast;
 
   &:hover {
@@ -52,9 +57,45 @@
   border-radius: 50px;
   font-size: 0.8rem;
   font-weight: 600;
+  white-space: nowrap;
 
   .badge-count {
     font-weight: 700;
+  }
+}
+
+// Toggle, favorites and hamburger group
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+// Dark mode toggle
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: $color-african-gold;
+  background: transparent;
+  border: 2px solid $color-african-gold;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color $transition-fast, color $transition-fast;
+
+  &:hover {
+    background-color: $color-african-gold;
+    color: $color-african-black;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $color-african-gold;
+    outline-offset: 2px;
   }
 }
 
@@ -86,7 +127,7 @@
     outline-offset: 2px;
   }
 
-  @include respond-to(mobile) {
+  @include respond-to(nav-collapsed) {
     display: flex;
   }
 }

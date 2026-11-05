@@ -1,32 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="East African Injera with Doro Wat - Ethiopian spongy teff flatbread with spicy chicken stew.">
-  <title>Injera with Doro Wat - Tastes of Africa</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="site-header" role="banner"><div class="header-inner"><a href="../index.html" class="site-brand" aria-label="Tastes of Africa Home"><img src="assets/taste_of_africa_logo.jpeg" alt="Tastes of Africa Logo" class="brand-logo"><span>Tastes of Africa</span></a><nav class="main-nav" role="navigation" aria-label="Main navigation"><ul class="nav-links"><li><a href="../index.html" class="nav-link">Home</a></li><li><a href="../recipes.html" class="nav-link active" aria-current="page">Recipes</a></li><li><a href="../regions.html" class="nav-link">Regions</a></li><li><a href="../about.html" class="nav-link">About Us</a></li><li><a href="../contact.html" class="nav-link">Contact</a></li></ul></nav><div style="display:flex;align-items:center;gap:1rem;"><span class="favorites-badge" aria-label="Favorites count">❤️ Favorites (<span id="favoritesCount">0</span>)</span><button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button></div></div></header>
-  <div class="nav-drawer closed" id="navDrawer" role="navigation" aria-label="Mobile navigation"><div class="drawer-inner"><ul class="nav-links"><li><a href="../index.html" class="nav-link">Home</a></li><li><a href="../recipes.html" class="nav-link active">Recipes</a></li><li><a href="../regions.html" class="nav-link">Regions</a></li><li><a href="../about.html" class="nav-link">About Us</a></li><li><a href="../contact.html" class="nav-link">Contact</a></li></ul></div></div>
-  <main role="main"><div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="separator">›</span><a href="../recipes.html">Recipes</a><span class="separator">›</span><span class="current">Injera with Doro Wat</span></nav>
-    <section class="recipe-hero" aria-label="Recipe overview"><div style="display:grid;grid-template-columns:1fr;gap:2rem;"><div><img src="assets/injera_1.jpg" alt="Ethiopian Injera with Doro Wat chicken stew" loading="lazy" style="width:100%;border-radius:8px;"></div><div><span class="badge badge-region">East Africa</span><h1>Ethiopian Injera & Doro Wat</h1><button class="btn-favorite" data-id="injera" data-name="Injera with Doro Wat" aria-label="Add Injera with Doro Wat to favorites" style="margin:1rem 0;"></button><div class="recipe-meta" style="flex-direction:column;"><div class="badge-group"><span class="badge badge-time">⏱ Prep: 45 min</span><span class="badge badge-time">🍳 Cook: 1.5 hrs</span><span class="badge badge-hard">Hard</span></div><p><strong>Servings:</strong> 4-6 people</p></div></div></div></section>
-    <section class="detail-content" aria-label="Cultural history"><h2>Cultural History & Significance</h2><p>Injera is the staple food of Ethiopia and Eritrea, a spongy flatbread made from fermented teff flour. Doro Wat, a spicy chicken stew, is considered the national dish and is served on special occasions. The combination represents the heart of Ethiopian communal dining, where food is shared from a large platter of injera topped with various wats (stews).</p></section>
-    <section class="cooking-steps detail-content" aria-label="Cooking steps"><h2>Cooking Steps</h2>
-      <details><summary>Phase 1: Ingredient Prep & Marinade</summary><div class="accordion-content"><ol><li>Prepare the injera batter by mixing teff flour with water and letting it ferment for 2-3 days.</li><li>Clean and cut chicken into pieces. Marinate with berbere spice, garlic, ginger, and lemon juice for 1 hour.</li><li>Hard-boil 6 eggs and peel them.</li><li>Prepare niter kibbeh (Ethiopian spiced butter) by simmering butter with onions, garlic, and spices.</li></ol></div></details>
-      <details><summary>Phase 2: Sauce Base & Browning</summary><div class="accordion-content"><ol><li>In a large pot, heat niter kibbeh and sauté chopped onions until deeply caramelized, about 20 minutes.</li><li>Add the marinated chicken and cook until browned on all sides.</li><li>Add berbere spice paste and stir to coat the chicken evenly.</li></ol></div></details>
-      <details><summary>Phase 3: Simmering & Slow Cooking</summary><div class="accordion-content"><ol><li>Pour in chicken stock and bring to a boil.</li><li>Reduce heat and simmer for 45 minutes until chicken is tender and sauce is thick.</li><li>Nestle the hard-boiled eggs into the stew and cook for another 15 minutes.</li></ol></div></details>
-      <details><summary>Phase 4: Plating & Traditional Accompaniments</summary><div class="accordion-content"><ol><li>Cook the injera on a hot griddle until bubbly and set, about 3-4 minutes per side.</li><li>Place a large round of injera on a serving platter.</li><li>Spoon the doro wat over the injera, ensuring each portion has chicken and egg.</li><li>Serve with additional injera on the side for scooping.</li></ol></div></details>
-    </section>
-    <section class="ingredients-section detail-content" aria-label="Ingredients"><h2>Ingredients</h2><ul class="golden-list"><li>4 cups teff flour (for injera)</li><li>1 whole chicken, cut into pieces</li><li>6 hard-boiled eggs</li><li>1 cup berbere spice blend</li><li>1/2 cup niter kibbeh (spiced butter)</li><li>3 large onions, chopped</li><li>4 cloves garlic</li><li>2 inches ginger</li><li>2 cups chicken stock</li><li>Lemon juice</li><li>Salt and pepper</li></ul></section>
-    <section class="equipment-section detail-content" aria-label="Equipment"><h2>Equipment</h2><ol><li>Large pot with lid</li><li>Flat griddle or injera pan</li><li>Blender for spice paste</li><li>Serving platter</li></ol></section>
-    <section class="nutrition-section detail-content" aria-label="Nutritional information"><h2>Nutritional Facts</h2><div class="table-responsive"><table class="nutrition-table"><caption>Nutritional Facts (per serving)</caption><thead><tr><th>Nutrient</th><th>Amount</th></tr></thead><tbody><tr><td>Calories</td><td>480 kcal</td></tr><tr><td>Protein</td><td>35 g</td></tr><tr><td>Carbohydrates</td><td>42 g</td></tr><tr><td>Dietary Fiber</td><td>6 g</td></tr><tr><td>Fat</td><td>18 g</td></tr><tr><td>Sodium</td><td>450 mg</td></tr><tr><td>Iron</td><td>5.8 mg</td></tr></tbody></table></div></section>
-    <section class="video-section detail-content" aria-label="Cooking video"><h2>Cooking Tutorial</h2><div class="video-container"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="How to Make Ethiopian Injera and Doro Wat" allowfullscreen loading="lazy"></iframe></div></section>
-    <section class="map-section detail-content" aria-label="Country of origin map"><h2>Country of Origin</h2><div class="landmark-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200000.0!2d38.7!3d9.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85f5df5ff7b3%3A0xc1e3f35201744545!2sAddis%20Ababa!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen loading="lazy" title="Map showing Ethiopia - origin of Injera and Doro Wat"></iframe></div></section>
-  </div></main>
-  <footer class="site-footer" role="contentinfo"><div class="footer-inner"><div class="footer-grid"><div class="footer-section"><h3>Tastes of Africa</h3><p>Celebrating the rich culinary heritage of the African continent.</p><ul class="social-links"><li><a href="#" aria-label="Follow us on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></li><li><a href="#" aria-label="Follow us on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></li><li><a href="#" aria-label="Follow us on Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li><li><a href="#" aria-label="Follow us on YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></li></ul></div><div class="footer-section"><h3>Quick Links</h3><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="../recipes.html">Recipes</a></li><li><a href="../regions.html">Regions</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact</a></li></ul></div><div class="footer-section"><h3>Recipes</h3><ul class="footer-links"><li><a href="jollof-rice.html">Jollof Rice</a></li><li><a href="tagine.html">Lamb Tagine</a></li><li><a href="injera.html">Injera & Doro Wat</a></li><li><a href="bunny-chow.html">Bunny Chow</a></li><li><a href="isombe.html">Rwandan Isombe</a></li></ul></div><div class="footer-section footer-newsletter"><h3>Newsletter</h3><p>Subscribe for new recipes and African food trends.</p><form id="newsletterForm" class="newsletter-form" novalidate><label for="newsletterEmail" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label><input type="email" id="newsletterEmail" class="form-control" placeholder="Enter your email" required aria-label="Email address for newsletter"><button type="submit" class="btn btn-gold">Subscribe</button></form><div id="newsletterFeedback" class="newsletter-feedback" hidden aria-live="polite"></div></div></div><div class="footer-bottom"><p>&copy; 2024 Tastes of Africa. All rights reserved.</p><ul class="footer-bottom-links"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div></div></footer>
-  <script src="../js/script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="East African Injera with Doro Wat - Ethiopian spongy teff flatbread with spicy chicken stew."
+    />
+    <title>Injera with Doro Wat - Tastes of Africa</title>
+    <script>
+      // Apply the saved or system theme before first paint to avoid a flash
+      (function () {
+        let theme = null;
+        try {
+          theme = localStorage.getItem("tastes_of_africa_theme");
+        } catch (e) {}
+        if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="../index.html" class="site-brand" aria-label="Tastes of Africa Home"
+          ><img
+            src="../assets/taste_of_africa_logo.jpeg"
+            alt="Tastes of Africa Logo"
+            class="brand-logo"
+          /><span>Tastes of Africa</span></a
+        >
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="../recipes.html" class="nav-link active" aria-current="page">Recipes</a></li>
+            <li><a href="../regions.html" class="nav-link">Regions</a></li>
+            <li><a href="../about.html" class="nav-link">About Us</a></li>
+            <li><a href="../contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Dark mode"
+            aria-pressed="false"
+          >
+            &#9790;</button
+          ><span class="favorites-badge">❤️ Favorites (<span id="favoritesCount">0</span>)</span
+          ><button
+            type="button"
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <nav class="nav-drawer closed" id="navDrawer" aria-label="Mobile navigation">
+      <div class="drawer-inner">
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../recipes.html" class="nav-link active" aria-current="page">Recipes</a></li>
+          <li><a href="../regions.html" class="nav-link">Regions</a></li>
+          <li><a href="../about.html" class="nav-link">About Us</a></li>
+          <li><a href="../contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a><span class="separator" aria-hidden="true">›</span
+          ><a href="../recipes.html">Recipes</a><span class="separator" aria-hidden="true">›</span
+          ><span class="current" aria-current="page">Injera with Doro Wat</span>
+        </nav>
+        <section class="recipe-hero" aria-label="Recipe overview">
+          <div class="recipe-hero-grid">
+            <div>
+              <img
+                src="../assets/injera_1.jpg"
+                alt="Ethiopian Injera with Doro Wat chicken stew"
+                class="recipe-hero-image"
+                fetchpriority="high"
+              />
+            </div>
+            <div>
+              <span class="badge badge-region">East Africa</span>
+              <h1>Ethiopian Injera &amp; Doro Wat</h1>
+              <button
+                type="button"
+                class="btn-favorite recipe-hero-favorite"
+                data-id="injera"
+                data-name="Injera with Doro Wat"
+                aria-label="Add Injera with Doro Wat to favorites"
+              ></button>
+              <div class="recipe-meta">
+                <div class="badge-group">
+                  <span class="badge badge-time">⏱ Prep: 45 min</span
+                  ><span class="badge badge-time">🍳 Cook: 1.5 hrs</span
+                  ><span class="badge badge-hard">Hard</span>
+                </div>
+                <p><strong>Servings:</strong> 4-6 people</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="detail-content" aria-label="Cultural history">
+          <h2>Cultural History &amp; Significance</h2>
+          <p>
+            Injera is the staple food of Ethiopia and Eritrea, a spongy flatbread made from fermented teff
+            flour. Doro Wat, a spicy chicken stew, is considered the national dish and is served on special
+            occasions. The combination represents the heart of Ethiopian communal dining, where food is shared
+            from a large platter of injera topped with various wats (stews).
+          </p>
+        </section>
+        <section class="cooking-steps detail-content" aria-label="Cooking steps">
+          <h2>Cooking Steps</h2>
+          <details>
+            <summary>Phase 1: Ingredient Prep &amp; Marinade</summary>
+            <div class="accordion-content">
+              <ol>
+                <li>
+                  Prepare the injera batter by mixing teff flour with water and letting it ferment for 2-3
+                  days.
+                </li>
+                <li>
+                  Clean and cut chicken into pieces. Marinate with berbere spice, garlic, ginger, and lemon
+                  juice for 1 hour.
+                </li>
+                <li>Hard-boil 6 eggs and peel them.</li>
+                <li>
+                  Prepare niter kibbeh (Ethiopian spiced butter) by simmering butter with onions, garlic, and
+                  spices.
+                </li>
+              </ol>
+            </div>
+          </details>
+          <details>
+            <summary>Phase 2: Sauce Base &amp; Browning</summary>
+            <div class="accordion-content">
+              <ol>
+                <li>
+                  In a large pot, heat niter kibbeh and sauté chopped onions until deeply caramelized, about
+                  20 minutes.
+                </li>
+                <li>Add the marinated chicken and cook until browned on all sides.</li>
+                <li>Add berbere spice paste and stir to coat the chicken evenly.</li>
+              </ol>
+            </div>
+          </details>
+          <details>
+            <summary>Phase 3: Simmering &amp; Slow Cooking</summary>
+            <div class="accordion-content">
+              <ol>
+                <li>Pour in chicken stock and bring to a boil.</li>
+                <li>Reduce heat and simmer for 45 minutes until chicken is tender and sauce is thick.</li>
+                <li>Nestle the hard-boiled eggs into the stew and cook for another 15 minutes.</li>
+              </ol>
+            </div>
+          </details>
+          <details>
+            <summary>Phase 4: Plating &amp; Traditional Accompaniments</summary>
+            <div class="accordion-content">
+              <ol>
+                <li>Cook the injera on a hot griddle until bubbly and set, about 3-4 minutes per side.</li>
+                <li>Place a large round of injera on a serving platter.</li>
+                <li>Spoon the doro wat over the injera, ensuring each portion has chicken and egg.</li>
+                <li>Serve with additional injera on the side for scooping.</li>
+              </ol>
+            </div>
+          </details>
+        </section>
+        <section class="ingredients-section detail-content" aria-label="Ingredients">
+          <h2>Ingredients</h2>
+          <div class="servings-scaler" id="servingsScaler" data-base-servings="4">
+            <span class="servings-label" id="servingsLabel">Servings</span>
+            <button type="button" class="servings-btn" id="servingsDecrease" aria-label="Decrease servings">
+              &minus;
+            </button>
+            <output
+              class="servings-value"
+              id="servingsValue"
+              aria-labelledby="servingsLabel"
+              aria-live="polite"
+              >4</output
+            >
+            <button type="button" class="servings-btn" id="servingsIncrease" aria-label="Increase servings">
+              +
+            </button>
+            <button type="button" class="servings-reset" id="servingsReset">Reset</button>
+          </div>
+          <ul class="golden-list">
+            <li>
+              <span class="ingredient-qty" data-qty="4">4</span>
+              <span class="ingredient-unit" data-one="cup" data-many="cups">cups</span> teff flour (for
+              injera)
+            </li>
+            <li>
+              <span class="ingredient-qty" data-qty="1" data-whole="true">1</span> whole
+              <span class="ingredient-unit" data-one="chicken" data-many="chickens">chicken</span>, cut into
+              pieces
+            </li>
+            <li>
+              <span class="ingredient-qty" data-qty="6" data-whole="true">6</span> hard-boiled
+              <span class="ingredient-unit" data-one="egg" data-many="eggs">eggs</span>
+            </li>
+            <li>
+              <span class="ingredient-qty" data-qty="1">1</span>
+              <span class="ingredient-unit" data-one="cup" data-many="cups">cup</span> berbere spice blend
+            </li>
+            <li>
+              <span class="ingredient-qty" data-qty="0.5">1/2</span>
+              <span class="ingredient-unit" data-one="cup" data-many="cups">cup</span> niter kibbeh (spiced
+              butter)
+            </li>
+            <li>
+              <span class="ingredient-qty" data-qty="3">3</span> large
+              <span class="ingredient-unit" data-one="onion" data-many="onions">onions</span>, chopped
+            </li>
+            <li>
+              <span class="ingredient-qty" data-qty="4">4</span>
+              <span class="ingredient-unit" data-one="clove" data-many="cloves">cloves</span> garlic
+            </li>
+            <li>
+              <span class="ingredient-qty" data-qty="2">2</span>
+              <span class="ingredient-unit" data-one="inch" data-many="inches">inches</span> ginger
+            </li>
+            <li>
+              <span class="ingredient-qty" data-qty="2">2</span>
+              <span class="ingredient-unit" data-one="cup" data-many="cups">cups</span> chicken stock
+            </li>
+            <li>Lemon juice</li>
+            <li>Salt and pepper</li>
+          </ul>
+        </section>
+        <section class="equipment-section detail-content" aria-label="Equipment">
+          <h2>Equipment</h2>
+          <ol>
+            <li>Large pot with lid</li>
+            <li>Flat griddle or injera pan</li>
+            <li>Blender for spice paste</li>
+            <li>Serving platter</li>
+          </ol>
+        </section>
+        <section class="nutrition-section detail-content" aria-label="Nutritional information">
+          <h2>Nutritional Facts</h2>
+          <div class="table-responsive">
+            <table class="nutrition-table">
+              <caption>
+                Nutritional Facts (per serving)
+              </caption>
+              <thead>
+                <tr>
+                  <th>Nutrient</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Calories</td>
+                  <td>480 kcal</td>
+                </tr>
+                <tr>
+                  <td>Protein</td>
+                  <td>35 g</td>
+                </tr>
+                <tr>
+                  <td>Carbohydrates</td>
+                  <td>42 g</td>
+                </tr>
+                <tr>
+                  <td>Dietary Fiber</td>
+                  <td>6 g</td>
+                </tr>
+                <tr>
+                  <td>Fat</td>
+                  <td>18 g</td>
+                </tr>
+                <tr>
+                  <td>Sodium</td>
+                  <td>450 mg</td>
+                </tr>
+                <tr>
+                  <td>Iron</td>
+                  <td>5.8 mg</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="video-section detail-content" aria-label="Cooking video">
+          <h2>More From East Africa: Swahili Pilau</h2>
+          <p>Explore another East African favorite with this spiced rice tutorial from the Swahili coast.</p>
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/jjQ039fZwTw"
+              title="How to Make Swahili Pilau by Chef Tali's Kitchen"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </section>
+
+        <section class="map-section detail-content" aria-label="Country of origin map">
+          <h2>Country of Origin</h2>
+          <div class="landmark-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200000.0!2d38.7!3d9.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85f5df5ff7b3%3A0xc1e3f35201744545!2sAddis%20Ababa!5e0!3m2!1sen!2s!4v1234567890"
+              allowfullscreen
+              loading="lazy"
+              title="Map showing Ethiopia - origin of Injera and Doro Wat"
+            ></iframe>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h2>Tastes of Africa</h2>
+            <p>Celebrating the rich culinary heritage of the African continent.</p>
+            <ul class="social-links">
+              <li>
+                <a href="#" aria-label="Follow us on Facebook"
+                  ><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                    /></svg
+                ></a>
+              </li>
+              <li>
+                <a href="#" aria-label="Follow us on Instagram"
+                  ><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                    /></svg
+                ></a>
+              </li>
+              <li>
+                <a href="#" aria-label="Follow us on Twitter"
+                  ><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                    /></svg
+                ></a>
+              </li>
+              <li>
+                <a href="#" aria-label="Follow us on YouTube"
+                  ><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    /></svg
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h2>Quick Links</h2>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../recipes.html">Recipes</a></li>
+              <li><a href="../regions.html">Regions</a></li>
+              <li><a href="../about.html">About Us</a></li>
+              <li><a href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h2>Recipes</h2>
+            <ul class="footer-links">
+              <li><a href="jollof-rice.html">Jollof Rice</a></li>
+              <li><a href="tagine.html">Lamb Tagine</a></li>
+              <li><a href="injera.html">Injera &amp; Doro Wat</a></li>
+              <li><a href="bunny-chow.html">Bunny Chow</a></li>
+              <li><a href="isombe.html">Rwandan Isombe</a></li>
+            </ul>
+          </div>
+          <div class="footer-section footer-newsletter">
+            <h2>Newsletter</h2>
+            <p>Subscribe for new recipes and African food trends.</p>
+            <form id="newsletterForm" class="newsletter-form" novalidate>
+              <label for="newsletterEmail" class="sr-only">Email address</label
+              ><input
+                type="email"
+                id="newsletterEmail"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+              /><button type="submit" class="btn btn-gold">Subscribe</button>
+            </form>
+            <div id="newsletterFeedback" class="newsletter-feedback" hidden aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Tastes of Africa. All rights reserved.</p>
+          <ul class="footer-bottom-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/script.js"></script>
+  </body>
 </html>

@@ -78,6 +78,10 @@ datalist {
   margin-top: $spacing-xs;
   text-align: right;
   transition: color $transition-fast;
+
+  &.is-valid {
+    color: $color-african-green;
+  }
 }
 
 // Error message

@@ -1,0 +1,233 @@
+// ============================================
+// Dark Theme
+// Loaded last. Active when <html data-theme="dark"> is set.
+// :where() keeps base element rules at low specificity, so they
+// never override components such as buttons or hero text.
+// ============================================
+
+$dark-bg: #15120E;
+$dark-surface: #221D17;
+$dark-surface-raised: #2E281F;
+$dark-text: #F3EDE1;
+$dark-muted: #C4BBAA;
+$dark-border: rgba($color-african-white, 0.16);
+$dark-green: #81C784;
+$dark-red: #FF8A80;
+
+:where([data-theme='dark']) {
+  h1, h2, h3, h4, h5, h6, blockquote {
+    color: $dark-text;
+  }
+
+  p {
+    color: $dark-muted;
+  }
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  body {
+    background-color: $dark-bg;
+    color: $dark-text;
+  }
+
+  // Page sections
+  .featured-dishes,
+  .cuisine-gallery,
+  .recipes-catalog,
+  .recipe-detail,
+  .regions-showcase,
+  .contact-page,
+  .about-page,
+  .food-trends {
+    background-color: $dark-bg;
+  }
+
+  .explore-regions,
+  .mission-section,
+  .map-landmark-section,
+  .about-videos-section {
+    background-color: $dark-surface;
+  }
+
+  // Cards and panels
+  .dish-card,
+  .contact-form-card,
+  .filter-bar,
+  .recipe-meta,
+  .nutrition-table,
+  .about-video-card {
+    background-color: $dark-surface;
+  }
+
+  details {
+    background-color: $dark-surface;
+    border-color: $dark-border;
+  }
+
+  summary {
+    color: $dark-text;
+
+    &:hover {
+      background-color: $dark-surface-raised;
+    }
+  }
+
+  details[open] > summary {
+    background-color: $dark-surface-raised;
+  }
+
+  .card-title,
+  .form-label,
+  .breadcrumb .current,
+  .nutrition-table td:first-child {
+    color: $dark-text;
+  }
+
+  .card-description,
+  .card-meta,
+  .breadcrumb,
+  .breadcrumb .separator,
+  .golden-list li,
+  details .accordion-content li,
+  .nutrition-table td,
+  .char-counter {
+    color: $dark-muted;
+  }
+
+  .card-footer {
+    border-top-color: $dark-border;
+  }
+
+  .breadcrumb a {
+    color: $color-african-gold;
+  }
+
+  // Buttons
+  .filter-btn {
+    color: $dark-muted;
+    border-color: $dark-muted;
+
+    &:hover {
+      color: $color-african-gold;
+      border-color: $color-african-gold;
+    }
+
+    &.active {
+      color: $color-african-black;
+    }
+  }
+
+  .btn-favorite {
+    background-color: $dark-surface-raised;
+    border-color: $dark-muted;
+
+    &::before {
+      color: $dark-muted;
+    }
+
+    &.favorited {
+      background-color: $dark-surface-raised;
+      border-color: $dark-red;
+
+      &::before {
+        color: $dark-red;
+      }
+    }
+  }
+
+  // Forms
+  .form-control {
+    background-color: $dark-surface-raised;
+    border-color: $dark-border;
+    color: $dark-text;
+
+    &::placeholder {
+      color: $dark-muted;
+      opacity: 1;
+    }
+
+    &.field-error {
+      border-color: $dark-red;
+    }
+  }
+
+  .error-message {
+    color: $dark-red;
+  }
+
+  .char-counter.is-valid {
+    color: $dark-green;
+  }
+
+  .feedback-banner {
+    background-color: $dark-surface-raised;
+    border-color: $dark-green;
+    color: $dark-green;
+
+    p {
+      color: $dark-green;
+    }
+  }
+
+  // Tables
+  .nutrition-table caption {
+    background-color: $dark-surface-raised;
+    color: $dark-text;
+  }
+
+  .nutrition-table tbody tr {
+    border-bottom-color: $dark-border;
+
+    &:nth-child(even) {
+      background-color: rgba($color-african-white, 0.04);
+    }
+
+    &:hover {
+      background-color: $dark-surface-raised;
+    }
+  }
+
+  // About page. These match the nesting depth in pages/_about.scss.
+  .kente-section,
+  .about-gallery-section {
+    background: $dark-bg;
+  }
+
+  .timeline-section .timeline-item .timeline-text {
+    background: $dark-surface;
+  }
+
+  .mission-section .about-text h2,
+  .timeline-section .timeline-item .timeline-text h3,
+  .about-video-card .video-card-content h3 {
+    color: $dark-green;
+  }
+
+  .mission-section .about-text p,
+  .timeline-section .timeline-item .timeline-text p,
+  .about-video-card .video-card-content p {
+    color: $dark-muted;
+  }
+
+  // Ingredient scaler
+  .servings-scaler {
+    background-color: $dark-surface;
+  }
+
+  .servings-label,
+  .servings-value {
+    color: $dark-text;
+  }
+
+  .servings-reset {
+    color: $color-african-gold;
+  }
+
+  // Theme toggle keeps its header styling; shadows need more depth on dark
+  .dish-card,
+  .contact-form-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+  }
+}

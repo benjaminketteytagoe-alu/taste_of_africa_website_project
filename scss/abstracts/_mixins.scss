@@ -3,13 +3,32 @@
 // ============================================
 
 // Responsive Media Queries
+//   mobile      : up to 480px
+//   tablet      : 481px to 768px only, so it can never override `mobile`
+//   tablet-down : up to 768px (phones and tablets)
+//   tablet-up   : 769px and wider
+//   nav-collapsed : up to 1023px (the full nav does not fit below this)
+//   desktop     : 1024px and wider
+//   wide        : 1280px and wider
 @mixin respond-to($breakpoint) {
   @if $breakpoint == mobile {
     @media (max-width: #{$bp-mobile}) {
       @content;
     }
   } @else if $breakpoint == tablet {
+    @media (min-width: #{$bp-mobile + 1}) and (max-width: #{$bp-tablet}) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-down {
     @media (max-width: #{$bp-tablet}) {
+      @content;
+    }
+  } @else if $breakpoint == nav-collapsed {
+    @media (max-width: #{$bp-desktop - 1}) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-up {
+    @media (min-width: #{$bp-tablet + 1}) {
       @content;
     }
   } @else if $breakpoint == desktop {

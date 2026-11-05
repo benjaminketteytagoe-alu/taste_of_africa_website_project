@@ -1,25 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore the culinary regions of Africa - West, North, East, Southern, and Central Africa.">
-  <title>Culinary Regions - Tastes of Africa</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="site-header" role="banner"><div class="header-inner"><a href="index.html" class="site-brand" aria-label="Tastes of Africa Home"><img src="assets/taste_of_africa_logo.jpeg" alt="Tastes of Africa Logo" class="brand-logo"><span>Tastes of Africa</span></a><nav class="main-nav" role="navigation" aria-label="Main navigation"><ul class="nav-links"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="recipes.html" class="nav-link">Recipes</a></li><li><a href="regions.html" class="nav-link active" aria-current="page">Regions</a></li><li><a href="about.html" class="nav-link">About Us</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul></nav><div style="display:flex;align-items:center;gap:1rem;"><span class="favorites-badge" aria-label="Favorites count">❤️ Favorites (<span id="favoritesCount">0</span>)</span><button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button></div></div></header>
-  <div class="nav-drawer closed" id="navDrawer" role="navigation" aria-label="Mobile navigation"><div class="drawer-inner"><ul class="nav-links"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="recipes.html" class="nav-link">Recipes</a></li><li><a href="regions.html" class="nav-link active">Regions</a></li><li><a href="about.html" class="nav-link">About Us</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul></div></div>
-  <main role="main">
-    <section class="section regions-showcase"><div class="container">
-      <div class="section-header"><h1>Culinary Regions of Africa</h1><p>Each region of Africa offers a unique flavor profile shaped by history, climate, and culture.</p></div>
-      <section class="region-section" id="west-africa"><div class="region-content"><h2>West Africa</h2><p>West African cuisine is characterized by bold, spicy flavors using <mark>scotch bonnet peppers</mark>, <mark>palm oil</mark>, and <mark>fermented locust beans (dawadawa)</mark>. The region is home to iconic dishes like jollof rice, egusi soup, fufu, and banku. The coastal influence brings fresh seafood, while the inland areas feature rich stews and grilled meats.</p><p>The culinary traditions here reflect the diverse ethnic groups — Yoruba, Igbo, Akan, Wolof — each contributing their own signature dishes to the regional tapestry.</p><a href="recipes/jollof-rice.html" class="btn btn-gold">Try Jollof Rice</a></div></section>
-      <section class="region-section" id="north-africa"><div class="region-content"><h2>North Africa (The Maghreb)</h2><p>North African cuisine blends Berber, Arab, and Mediterranean influences. Key ingredients include <mark>ras el hanout</mark>, <mark>harissa</mark>, <mark>preserved lemons</mark>, and <mark>orange blossom water</mark>. The region is famous for tagines, couscous, brik, and fresh mint tea.</p><p>The slow-cooking tagine method allows spices to meld beautifully with tender meats and sweet fruits, creating the signature sweet-savory balance that defines Moroccan and Tunisian cooking.</p><a href="recipes/tagine.html" class="btn btn-gold">Try Lamb Tagine</a></div></section>
-      <section class="region-section" id="east-africa"><div class="region-content"><h2>East Africa & The Horn</h2><p>East African cuisine centers around <mark>teff injera</mark>, <mark>berbere spice</mark>, and <mark>ugali</mark>. Ethiopian and Eritrean cooking is renowned for its communal dining style, while the Swahili coast brings coconut fish curries influenced by Indian and Arab trade routes.</p><p>The region's highland agriculture produces unique grains and spices, while the coastal areas offer some of the most flavorful seafood dishes on the continent.</p><a href="recipes/injera.html" class="btn btn-gold">Try Injera & Doro Wat</a></div></section>
-      <section class="region-section" id="southern-central"><div class="region-content"><h2>Southern & Central Africa</h2><p>Southern African cuisine features <mark>bobotie</mark>, <mark>braai</mark> (barbecue), and the Durban <mark>bunny chow</mark>. Central Africa is known for <mark>sadza</mark>, <mark>isombe</mark> (pounded cassava leaves), and <mark>peanut sauces</mark>. The region reflects a fusion of indigenous, Indian, and European influences.</p><p>From the Cape to Cairo, this vast region offers everything from spicy curries to hearty stews, all rooted in the agricultural traditions of local communities.</p><div style="display:flex;gap:1rem;flex-wrap:wrap;"><a href="recipes/bunny-chow.html" class="btn btn-gold">Try Bunny Chow</a><a href="recipes/isombe.html" class="btn btn-gold">Try Rwandan Isombe</a></div></div></section>
-    </div></section>
-  </main>
-  <footer class="site-footer" role="contentinfo"><div class="footer-inner"><div class="footer-grid"><div class="footer-section"><h3>Tastes of Africa</h3><p>Celebrating the rich culinary heritage of the African continent.</p><ul class="social-links"><li><a href="#" aria-label="Follow us on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></li><li><a href="#" aria-label="Follow us on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></li><li><a href="#" aria-label="Follow us on Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li><li><a href="#" aria-label="Follow us on YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></li></ul></div><div class="footer-section"><h3>Quick Links</h3><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="recipes.html">Recipes</a></li><li><a href="regions.html">Regions</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-section"><h3>Recipes</h3><ul class="footer-links"><li><a href="recipes/jollof-rice.html">Jollof Rice</a></li><li><a href="recipes/tagine.html">Lamb Tagine</a></li><li><a href="recipes/injera.html">Injera & Doro Wat</a></li><li><a href="recipes/bunny-chow.html">Bunny Chow</a></li><li><a href="recipes/isombe.html">Rwandan Isombe</a></li></ul></div><div class="footer-section footer-newsletter"><h3>Newsletter</h3><p>Subscribe for new recipes and African food trends.</p><form id="newsletterForm" class="newsletter-form" novalidate><label for="newsletterEmail" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label><input type="email" id="newsletterEmail" class="form-control" placeholder="Enter your email" required aria-label="Email address for newsletter"><button type="submit" class="btn btn-gold">Subscribe</button></form><div id="newsletterFeedback" class="newsletter-feedback" hidden aria-live="polite"></div></div></div><div class="footer-bottom"><p>&copy; 2024 Tastes of Africa. All rights reserved.</p><ul class="footer-bottom-links"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div></div></footer>
-  <script src="js/script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore the culinary regions of Africa - West, North, East, Southern, and Central Africa."
+    />
+    <title>Culinary Regions - Tastes of Africa</title>
+    <script>
+      // Apply the saved or system theme before first paint to avoid a flash
+      (function () {
+        let theme = null;
+        try {
+          theme = localStorage.getItem("tastes_of_africa_theme");
+        } catch (e) {}
+        if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="site-brand" aria-label="Tastes of Africa Home"
+          ><img src="assets/taste_of_africa_logo.jpeg" alt="Tastes of Africa Logo" class="brand-logo" /><span
+            >Tastes of Africa</span
+          ></a
+        >
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="recipes.html" class="nav-link">Recipes</a></li>
+            <li><a href="regions.html" class="nav-link active" aria-current="page">Regions</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Dark mode"
+            aria-pressed="false"
+          >
+            &#9790;</button
+          ><span class="favorites-badge">❤️ Favorites (<span id="favoritesCount">0</span>)</span
+          ><button
+            type="button"
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <nav class="nav-drawer closed" id="navDrawer" aria-label="Mobile navigation">
+      <div class="drawer-inner">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="recipes.html" class="nav-link">Recipes</a></li>
+          <li><a href="regions.html" class="nav-link active" aria-current="page">Regions</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="section regions-showcase">
+        <div class="container">
+          <div class="section-header">
+            <h1>Culinary Regions of Africa</h1>
+            <p>
+              Each region of Africa offers a unique flavor profile shaped by history, climate, and culture.
+            </p>
+          </div>
+          <section class="region-section" id="west-africa">
+            <div class="region-content">
+              <h2>West Africa</h2>
+              <p>
+                West African cuisine is characterized by bold, spicy flavors using
+                <mark>scotch bonnet peppers</mark>, <mark>palm oil</mark>, and
+                <mark>fermented locust beans (dawadawa)</mark>. The region is home to iconic dishes like
+                jollof rice, egusi soup, fufu, and banku. The coastal influence brings fresh seafood, while
+                the inland areas feature rich stews and grilled meats.
+              </p>
+              <p>
+                The culinary traditions here reflect the diverse ethnic groups — Yoruba, Igbo, Akan, Wolof —
+                each contributing their own signature dishes to the regional tapestry.
+              </p>
+              <a href="recipes/jollof-rice.html" class="btn btn-gold">Try Jollof Rice</a>
+              <div class="region-video">
+                <h3>Learn a West African everyday favorite: Okra Stew</h3>
+                <div class="video-container">
+                  <iframe
+                    src="https://www.youtube.com/embed/mw1T4R8YbUg"
+                    title="How to Make Okra Stew by Sweet Adjeley"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="region-section" id="north-africa">
+            <div class="region-content">
+              <h2>North Africa (The Maghreb)</h2>
+              <p>
+                North African cuisine blends Berber, Arab, and Mediterranean influences. Key ingredients
+                include <mark>ras el hanout</mark>, <mark>harissa</mark>, <mark>preserved lemons</mark>, and
+                <mark>orange blossom water</mark>. The region is famous for tagines, couscous, brik, and fresh
+                mint tea.
+              </p>
+              <p>
+                The slow-cooking tagine method allows spices to meld beautifully with tender meats and sweet
+                fruits, creating the signature sweet-savory balance that defines Moroccan and Tunisian
+                cooking.
+              </p>
+              <a href="recipes/tagine.html" class="btn btn-gold">Try Lamb Tagine</a>
+              <div class="region-video">
+                <h3>Take a food tour through Morocco: Medfouna and Stuffed Pigeon</h3>
+                <div class="video-container">
+                  <iframe
+                    src="https://www.youtube.com/embed/84KcREBUILE"
+                    title="Moroccan food tour with Mark Wiens"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="region-section" id="east-africa">
+            <div class="region-content">
+              <h2>East Africa &amp; The Horn</h2>
+              <p>
+                East African cuisine centers around <mark>teff injera</mark>, <mark>berbere spice</mark>, and
+                <mark>ugali</mark>. Ethiopian and Eritrean cooking is renowned for its communal dining style,
+                while the Swahili coast brings coconut fish curries influenced by Indian and Arab trade
+                routes.
+              </p>
+              <p>
+                The region's highland agriculture produces unique grains and spices, while the coastal areas
+                offer some of the most flavorful seafood dishes on the continent.
+              </p>
+              <a href="recipes/injera.html" class="btn btn-gold">Try Injera &amp; Doro Wat</a>
+              <div class="region-video">
+                <h3>Master East Africa's best-loved staple: Ugali</h3>
+                <div class="video-container">
+                  <iframe
+                    src="https://www.youtube.com/embed/mzfXPKdG_oc"
+                    title="How to Make Perfect Ugali by Hebby Health Secrets"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="region-section" id="southern-central">
+            <div class="region-content">
+              <h2>Southern &amp; Central Africa</h2>
+              <p>
+                Southern African cuisine features <mark>bobotie</mark>, <mark>braai</mark> (barbecue), and the
+                Durban <mark>bunny chow</mark>. Central Africa is known for <mark>sadza</mark>,
+                <mark>isombe</mark> (pounded cassava leaves), and <mark>peanut sauces</mark>. The region
+                reflects a fusion of indigenous, Indian, and European influences.
+              </p>
+              <p>
+                From the Cape to Cairo, this vast region offers everything from spicy curries to hearty stews,
+                all rooted in the agricultural traditions of local communities.
+              </p>
+              <div class="region-actions">
+                <a href="recipes/bunny-chow.html" class="btn btn-gold">Try Bunny Chow</a
+                ><a href="recipes/isombe.html" class="btn btn-gold">Try Rwandan Isombe</a>
+              </div>
+              <div class="region-video">
+                <h3>See how Southern Africa's maize staple is made: Pap</h3>
+                <div class="video-container video-container-short">
+                  <iframe
+                    src="https://www.youtube.com/embed/kzakesjJNR4"
+                    title="Savoury pap by Zamokuhle Mafuleka"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h2>Tastes of Africa</h2>
+            <p>Celebrating the rich culinary heritage of the African continent.</p>
+            <ul class="social-links">
+              <li>
+                <a href="#" aria-label="Follow us on Facebook"
+                  ><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                    /></svg
+                ></a>
+              </li>
+              <li>
+                <a href="#" aria-label="Follow us on Instagram"
+                  ><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                    /></svg
+                ></a>
+              </li>
+              <li>
+                <a href="#" aria-label="Follow us on Twitter"
+                  ><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                    /></svg
+                ></a>
+              </li>
+              <li>
+                <a href="#" aria-label="Follow us on YouTube"
+                  ><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    /></svg
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h2>Quick Links</h2>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="recipes.html">Recipes</a></li>
+              <li><a href="regions.html">Regions</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h2>Recipes</h2>
+            <ul class="footer-links">
+              <li><a href="recipes/jollof-rice.html">Jollof Rice</a></li>
+              <li><a href="recipes/tagine.html">Lamb Tagine</a></li>
+              <li><a href="recipes/injera.html">Injera &amp; Doro Wat</a></li>
+              <li><a href="recipes/bunny-chow.html">Bunny Chow</a></li>
+              <li><a href="recipes/isombe.html">Rwandan Isombe</a></li>
+            </ul>
+          </div>
+          <div class="footer-section footer-newsletter">
+            <h2>Newsletter</h2>
+            <p>Subscribe for new recipes and African food trends.</p>
+            <form id="newsletterForm" class="newsletter-form" novalidate>
+              <label for="newsletterEmail" class="sr-only">Email address</label
+              ><input
+                type="email"
+                id="newsletterEmail"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+              /><button type="submit" class="btn btn-gold">Subscribe</button>
+            </form>
+            <div id="newsletterFeedback" class="newsletter-feedback" hidden aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Tastes of Africa. All rights reserved.</p>
+          <ul class="footer-bottom-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
 </html>

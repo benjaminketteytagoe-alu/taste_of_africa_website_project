@@ -220,6 +220,101 @@
   }
 }
 
+// Home hero: text and video stack on small screens, then sit side by side
+.home-hero {
+  // Fills the first screen below the header, without growing on tall monitors
+  @include respond-to(desktop) {
+    min-height: min(calc(100vh - 72px), 760px);
+  }
+
+  // Even shade on small screens, where text can sit anywhere over the photo
+  &.hero-section::before {
+    background: rgba($color-african-black, 0.68);
+  }
+
+  // Darker behind the text, lighter towards the video
+  @include respond-to(desktop) {
+    &.hero-section::before {
+      background: linear-gradient(
+        to right,
+        rgba($color-african-black, 0.86) 0%,
+        rgba($color-african-black, 0.66) 50%,
+        rgba($color-african-black, 0.4) 100%
+      );
+    }
+  }
+}
+
+.home-hero .hero-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: $spacing-lg;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: $spacing-lg $spacing-md 3.5rem;
+
+  h1 {
+    text-wrap: balance;
+  }
+
+  .hero-subtitle {
+    margin-bottom: $spacing-lg;
+  }
+
+  @include respond-to(tablet-up) {
+    padding: $spacing-xl $spacing-lg 4rem;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: $spacing-xl;
+    text-align: left;
+
+    h1 {
+      font-size: clamp(2.25rem, 3.2vw, 2.9rem);
+    }
+
+    .hero-cta {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.hero-text {
+  max-width: 640px;
+}
+
+.hero-video {
+  width: 100%;
+  max-width: 560px;
+
+  figcaption {
+    margin-top: $spacing-sm;
+    font-size: 0.9rem;
+    text-align: center;
+    color: $color-african-white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.hero-video-frame {
+  aspect-ratio: 16 / 9;
+  border: 2px solid rgba($color-african-gold, 0.75);
+  border-radius: $spacing-md;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
 // Legacy video container (kept for backward compatibility)
 .video-container {
   position: relative;
@@ -236,6 +331,12 @@
     width: 100%;
     height: 100%;
     border: none;
+  }
+
+  // YouTube Shorts are portrait
+  &.video-container-short {
+    max-width: 320px;
+    aspect-ratio: 9 / 16;
   }
 }
 

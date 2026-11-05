@@ -4,6 +4,30 @@
 
 .recipes-catalog {
   background-color: $color-cream-bg;
+
+  // Make recipe card images more compact and appealing
+  .recipe-card {
+    .card-image {
+      aspect-ratio: 16 / 9;
+      max-height: 220px;
+    }
+
+    .card-content {
+      padding: $spacing-md;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      margin-bottom: $spacing-sm;
+      line-height: 1.3;
+    }
+
+    .card-description {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      margin-bottom: $spacing-md;
+    }
+  }
 }
 
 .recipe-detail {
@@ -12,41 +36,176 @@
 
 .recipe-hero {
   background-color: $color-surface-dark;
-  padding: $spacing-xl 0;
-  margin-bottom: $spacing-xl;
+  padding: $spacing-lg $spacing-md;
+  margin-bottom: $spacing-lg;
+
+  @include respond-to(tablet) {
+    padding: $spacing-xl $spacing-lg;
+    margin-bottom: $spacing-xl;
+  }
+
+  h1 {
+    color: $color-african-white;
+    overflow-wrap: anywhere; // Lets long names such as "Ghanaian/Nigerian" wrap
+  }
+
+  .recipe-meta {
+    flex-direction: column;
+  }
 }
 
-.recipe-meta {
-  display: flex;
+// Image and details stack on small screens, then sit side by side
+.recipe-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: $spacing-lg;
+  align-items: center;
+
+  @include respond-to(tablet-up) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.recipe-hero-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: $spacing-sm;
+}
+
+.recipe-hero-favorite {
+  margin: $spacing-md 0;
+}
+
+// Ingredient scaler
+.servings-scaler {
+  display: inline-flex;
   flex-wrap: wrap;
-  gap: $spacing-md;
-  margin-bottom: $spacing-lg;
-  padding: $spacing-md;
+  align-items: center;
+  gap: $spacing-sm;
+  margin: $spacing-md 0;
+  padding: $spacing-sm $spacing-md;
   background-color: $color-african-white;
   border-radius: $spacing-sm;
   box-shadow: $shadow-card;
 }
 
+.servings-label {
+  font-weight: 600;
+  color: $color-african-black;
+}
+
+.servings-value {
+  min-width: 2ch;
+  font-weight: 700;
+  text-align: center;
+  color: $color-african-black;
+}
+
+.servings-btn {
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: $color-african-black;
+  background-color: $color-african-gold;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: shade($color-african-gold, 10%);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $color-african-gold;
+    outline-offset: 2px;
+  }
+}
+
+.servings-reset {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: $color-african-red;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 3px solid $color-african-gold;
+    outline-offset: 2px;
+  }
+}
+
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+  padding: $spacing-sm $spacing-md;
+  background-color: $color-african-white;
+  border-radius: $spacing-sm;
+  box-shadow: $shadow-card;
+
+  @include respond-to(tablet) {
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+    padding: $spacing-md;
+  }
+}
+
 .cooking-steps {
-  margin: $spacing-xl 0;
+  margin: $spacing-lg 0;
+
+  @include respond-to(tablet) {
+    margin: $spacing-xl 0;
+  }
 }
 
 .ingredients-section {
-  margin: $spacing-xl 0;
+  margin: $spacing-lg 0;
+
+  @include respond-to(tablet) {
+    margin: $spacing-xl 0;
+  }
 }
 
 .equipment-section {
-  margin: $spacing-xl 0;
+  margin: $spacing-lg 0;
+
+  @include respond-to(tablet) {
+    margin: $spacing-xl 0;
+  }
 }
 
 .nutrition-section {
-  margin: $spacing-xl 0;
+  margin: $spacing-lg 0;
+
+  @include respond-to(tablet) {
+    margin: $spacing-xl 0;
+  }
 }
 
 .video-section {
-  margin: $spacing-xl 0;
+  margin: $spacing-lg 0;
+
+  @include respond-to(tablet) {
+    margin: $spacing-xl 0;
+  }
 }
 
 .map-section {
-  margin: $spacing-xl 0;
+  margin: $spacing-lg 0;
+
+  @include respond-to(tablet) {
+    margin: $spacing-xl 0;
+  }
 }

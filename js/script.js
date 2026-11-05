@@ -36,12 +36,29 @@ document.addEventListener('DOMContentLoaded', function() {
   function initFavorites() {
     let favorites = [];
 
-    // Load favorites from LocalStorage
+    // Load favorites from LocalStorage, ignoring missing or malformed data
     try {
-      const stored = localStorage.getItem('tastes_of_africa_favorites');
-      favorites = stored ? JSON.parse(stored) : [];
+      const stored = JSON.parse(localStorage.getItem('tastes_of_africa_favorites'));
+      favorites = Array.isArray(stored) ? stored : [];
     } catch (e) {
       favorites = [];
+    }
+
+    // Save favorites; storage can be full or blocked in private browsing
+    function saveFavorites() {
+      try {
+        localStorage.setItem('tastes_of_africa_favorites', JSON.stringify(favorites));
+      } catch (e) {
+        console.warn('Favorites could not be saved:', e);
+      }
+    }
+
+    // Keep the button's appearance and screen reader text in sync
+    function updateFavoriteButton(button, isFavorite) {
+      const name = button.dataset.name;
+      button.classList.toggle('favorited', isFavorite);
+      button.setAttribute('aria-pressed', String(isFavorite));
+      button.setAttribute('aria-label', (isFavorite ? 'Remove ' : 'Add ') + name + (isFavorite ? ' from favorites' : ' to favorites'));
     }
 
     // Update header counter
@@ -59,10 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
       favoriteButtons.forEach(function(button) {
         const id = button.dataset.id;
 
-        // Check if already favorited
-        if (favorites.includes(id)) {
-          button.classList.add('favorited');
-        }
+        // Restore saved state
+        updateFavoriteButton(button, favorites.includes(id));
 
         // Add click handler
         button.addEventListener('click', function(e) {
@@ -74,15 +89,15 @@ document.addEventListener('DOMContentLoaded', function() {
             favorites = favorites.filter(function(fav) {
               return fav !== id;
             });
-            button.classList.remove('favorited');
+            updateFavoriteButton(button, false);
           } else {
             // Add to favorites
             favorites.push(id);
-            button.classList.add('favorited');
+            updateFavoriteButton(button, true);
           }
 
           // Save to LocalStorage
-          localStorage.setItem('tastes_of_africa_favorites', JSON.stringify(favorites));
+          saveFavorites();
 
           // Trigger pulse animation
           button.classList.add('pulse');
@@ -112,17 +127,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!form) return;
 
+    // Mark a field invalid and show the reason beneath it
+    function showFieldError(field, message) {
+      const error = document.createElement('span');
+      error.className = 'error-message';
+      error.id = field.id + 'Error';
+      error.textContent = message;
+      field.after(error);
+
+      field.classList.add('field-error');
+      field.setAttribute('aria-invalid', 'true');
+      field.setAttribute('aria-describedby', error.id);
+    }
+
     // Live character counter
     if (messageField && charCount) {
       messageField.addEventListener('input', function() {
         const length = messageField.value.trim().length;
-        charCount.textContent = length + ' / 20 minimum characters';
-
-        if (length > 20) {
-          charCount.style.color = '#1B5E20';
-        } else {
-          charCount.style.color = '#666666';
-        }
+        charCount.textContent = length + ' / 21 characters minimum';
+        charCount.classList.toggle('is-valid', length > 20);
       });
     }
 
@@ -134,6 +157,10 @@ document.addEventListener('DOMContentLoaded', function() {
       invalidFields.forEach(function(field) {
         field.classList.remove('field-error');
         field.removeAttribute('aria-invalid');
+        field.removeAttribute('aria-describedby');
+      });
+      form.querySelectorAll('.error-message').forEach(function(error) {
+        error.remove();
       });
 
       let isValid = true;
@@ -142,8 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Validate Name
       const nameField = document.getElementById('userName');
       if (!nameField.value.trim()) {
-        nameField.classList.add('field-error');
-        nameField.setAttribute('aria-invalid', 'true');
+        showFieldError(nameField, 'Please enter your name.');
         isValid = false;
         if (!firstInvalidField) firstInvalidField = nameField;
       }
@@ -152,8 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const emailField = document.getElementById('userEmail');
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailField.value.trim() || !emailRegex.test(emailField.value.trim())) {
-        emailField.classList.add('field-error');
-        emailField.setAttribute('aria-invalid', 'true');
+        showFieldError(emailField, 'Please enter a valid email address.');
         isValid = false;
         if (!firstInvalidField) firstInvalidField = emailField;
       }
@@ -161,8 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Validate Country
       const countryField = document.getElementById('userCountry');
       if (!countryField.value.trim()) {
-        countryField.classList.add('field-error');
-        countryField.setAttribute('aria-invalid', 'true');
+        showFieldError(countryField, 'Please enter your country.');
         isValid = false;
         if (!firstInvalidField) firstInvalidField = countryField;
       }
@@ -170,16 +194,14 @@ document.addEventListener('DOMContentLoaded', function() {
       // Validate Subject
       const subjectField = document.getElementById('userSubject');
       if (!subjectField.value) {
-        subjectField.classList.add('field-error');
-        subjectField.setAttribute('aria-invalid', 'true');
+        showFieldError(subjectField, 'Please select a subject.');
         isValid = false;
         if (!firstInvalidField) firstInvalidField = subjectField;
       }
 
       // Validate Message (must exceed 20 characters)
       if (messageField.value.trim().length <= 20) {
-        messageField.classList.add('field-error');
-        messageField.setAttribute('aria-invalid', 'true');
+        showFieldError(messageField, 'Your message must be more than 20 characters.');
         isValid = false;
         if (!firstInvalidField) firstInvalidField = messageField;
       }
@@ -203,8 +225,14 @@ document.addEventListener('DOMContentLoaded', function() {
       setTimeout(function() {
         form.style.display = 'none';
 
-        // Show feedback message
-        feedback.innerHTML = '<p>Thank you, <strong>' + userName + '</strong>! We\'ve received your message regarding <strong>' + userSubject + '</strong> and will respond shortly.</p>';
+        // Show feedback message. textContent keeps user input as plain text.
+        const message = document.createElement('p');
+        const nameElement = document.createElement('strong');
+        const subjectElement = document.createElement('strong');
+        nameElement.textContent = userName;
+        subjectElement.textContent = userSubject;
+        message.append('Thank you, ', nameElement, '! We\'ve received your message regarding ', subjectElement, ' and will respond shortly.');
+        feedback.replaceChildren(message);
         feedback.hidden = false;
         feedback.style.opacity = '1';
         feedback.style.transition = 'opacity 0.3s ease';
@@ -221,19 +249,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!hamburger || !navDrawer) return;
 
+    // Dimmed backdrop; clicking it closes the drawer
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    function isDrawerOpen() {
+      return hamburger.getAttribute('aria-expanded') === 'true';
+    }
+
+    function setDrawerOpen(isOpen) {
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      navDrawer.classList.toggle('open', isOpen);
+      navDrawer.classList.toggle('closed', !isOpen);
+      overlay.classList.toggle('active', isOpen);
+    }
+
     hamburger.addEventListener('click', function() {
-      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+      setDrawerOpen(!isDrawerOpen());
+    });
 
-      // Toggle ARIA attributes
-      hamburger.setAttribute('aria-expanded', String(!isExpanded));
+    overlay.addEventListener('click', function() {
+      setDrawerOpen(false);
+    });
 
-      // Toggle drawer visibility
-      if (isExpanded) {
-        navDrawer.classList.remove('open');
-        navDrawer.classList.add('closed');
-      } else {
-        navDrawer.classList.remove('closed');
-        navDrawer.classList.add('open');
+    // Escape closes the drawer and returns focus to the menu button
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isDrawerOpen()) {
+        setDrawerOpen(false);
+        hamburger.focus();
+      }
+    });
+
+    // Close the drawer if the screen grows past the mobile layout
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', function(e) {
+      if (e.matches) {
+        setDrawerOpen(false);
       }
     });
 
@@ -241,9 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const drawerLinks = navDrawer.querySelectorAll('a');
     drawerLinks.forEach(function(link) {
       link.addEventListener('click', function() {
-        hamburger.setAttribute('aria-expanded', 'false');
-        navDrawer.classList.remove('open');
-        navDrawer.classList.add('closed');
+        setDrawerOpen(false);
       });
     });
   }
@@ -306,6 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
     const totalSlides = slides.length;
     let intervalId;
+    let isHovered = false;
 
     function goToSlide(index) {
       slides.forEach(function(slide) {
@@ -328,14 +378,16 @@ document.addEventListener('DOMContentLoaded', function() {
       goToSlide(next);
     }
 
+    // Only one timer may run, and none while the pointer is over the slides
     function startLoop() {
-      intervalId = setInterval(nextSlide, 4000);
+      stopLoop();
+      if (!isHovered) {
+        intervalId = setInterval(nextSlide, 4000);
+      }
     }
 
     function stopLoop() {
-      if (intervalId) {
-        clearInterval(intervalId);
-      }
+      clearInterval(intervalId);
     }
 
     // Dot click handlers
@@ -350,8 +402,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Pause on hover
     const heroSection = document.querySelector('.hero-section');
     if (heroSection) {
-      heroSection.addEventListener('mouseenter', stopLoop);
-      heroSection.addEventListener('mouseleave', startLoop);
+      heroSection.addEventListener('mouseenter', function() {
+        isHovered = true;
+        stopLoop();
+      });
+      heroSection.addEventListener('mouseleave', function() {
+        isHovered = false;
+        startLoop();
+      });
     }
 
     // Start the loop
@@ -393,6 +451,235 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ========================================
+  // Feature H: About Page Image Gallery Loop
+  // ========================================
+  function initAboutGallery() {
+    const galleryLoop = document.getElementById('aboutGalleryLoop');
+    if (!galleryLoop) return;
+
+    const slides = galleryLoop.querySelectorAll('.gallery-slide');
+    const dotsContainer = document.getElementById('aboutGalleryDots');
+    const prevBtn = document.getElementById('aboutGalleryPrev');
+    const nextBtn = document.getElementById('aboutGalleryNext');
+
+    if (slides.length === 0) return;
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let intervalId;
+    let isHovered = false;
+
+    // Create dot indicators
+    slides.forEach(function(_, index) {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'gallery-dot' + (index === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (index + 1));
+      dot.addEventListener('click', function() {
+        stopLoop();
+        goToSlide(index);
+        startLoop();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    function getDots() {
+      return dotsContainer.querySelectorAll('.gallery-dot');
+    }
+
+    function goToSlide(index) {
+      slides.forEach(function(slide) {
+        slide.classList.remove('active');
+      });
+      getDots().forEach(function(dot) {
+        dot.classList.remove('active');
+      });
+
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      getDots()[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      const next = (currentSlide + 1) % totalSlides;
+      goToSlide(next);
+    }
+
+    function prevSlide() {
+      const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+      goToSlide(prev);
+    }
+
+    // Only one timer may run, and none while the pointer is over the slides
+    function startLoop() {
+      stopLoop();
+      if (!isHovered) {
+        intervalId = setInterval(nextSlide, 4000);
+      }
+    }
+
+    function stopLoop() {
+      clearInterval(intervalId);
+    }
+
+    // Button handlers
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        stopLoop();
+        prevSlide();
+        startLoop();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        stopLoop();
+        nextSlide();
+        startLoop();
+      });
+    }
+
+    // Pause on hover
+    galleryLoop.addEventListener('mouseenter', function() {
+      isHovered = true;
+      stopLoop();
+    });
+    galleryLoop.addEventListener('mouseleave', function() {
+      isHovered = false;
+      startLoop();
+    });
+
+    // Keyboard support
+    galleryLoop.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft') {
+        stopLoop();
+        prevSlide();
+        startLoop();
+      } else if (e.key === 'ArrowRight') {
+        stopLoop();
+        nextSlide();
+        startLoop();
+      }
+    });
+
+    // Start the auto-loop
+    startLoop();
+  }
+
+  // ========================================
+  // Feature I: Ingredient Scaling
+  // ========================================
+  function initIngredientScaler() {
+    const scaler = document.getElementById('servingsScaler');
+    if (!scaler) return;
+
+    const FRACTIONS = ['', '1/8', '1/4', '3/8', '1/2', '5/8', '3/4', '7/8'];
+    const MIN_SERVINGS = 1;
+    const MAX_SERVINGS = 24;
+
+    const baseServings = Number(scaler.dataset.baseServings);
+    const output = document.getElementById('servingsValue');
+    const decreaseBtn = document.getElementById('servingsDecrease');
+    const increaseBtn = document.getElementById('servingsIncrease');
+    const resetBtn = document.getElementById('servingsReset');
+    const ingredients = document.querySelectorAll('.golden-list li');
+
+    let servings = baseServings;
+
+    // Round to the nearest eighth and format as "1 1/2"; never show zero
+    function formatQuantity(value) {
+      const eighths = Math.max(1, Math.round(value * 8));
+      const whole = Math.floor(eighths / 8);
+      const fraction = FRACTIONS[eighths % 8];
+
+      if (!fraction) return String(whole);
+      return whole ? whole + ' ' + fraction : fraction;
+    }
+
+    function updateIngredients() {
+      const scale = servings / baseServings;
+
+      ingredients.forEach(function(item) {
+        let largest = 0;
+
+        item.querySelectorAll('.ingredient-qty').forEach(function(quantity) {
+          let amount = Number(quantity.dataset.qty) * scale;
+
+          // Eggs, cans and similar items can't be split into fractions
+          if (quantity.dataset.whole) {
+            amount = Math.max(1, Math.round(amount));
+          }
+
+          largest = Math.max(largest, amount);
+          quantity.textContent = formatQuantity(amount);
+        });
+
+        // "1 cup" but "1 1/2 cups"
+        item.querySelectorAll('.ingredient-unit').forEach(function(unit) {
+          unit.textContent = largest > 1 ? unit.dataset.many : unit.dataset.one;
+        });
+      });
+    }
+
+    function setServings(value) {
+      servings = Math.min(MAX_SERVINGS, Math.max(MIN_SERVINGS, value));
+      output.textContent = servings;
+      decreaseBtn.disabled = servings === MIN_SERVINGS;
+      increaseBtn.disabled = servings === MAX_SERVINGS;
+      updateIngredients();
+    }
+
+    decreaseBtn.addEventListener('click', function() {
+      setServings(servings - 1);
+    });
+
+    increaseBtn.addEventListener('click', function() {
+      setServings(servings + 1);
+    });
+
+    resetBtn.addEventListener('click', function() {
+      setServings(baseServings);
+    });
+  }
+
+  // ========================================
+  // Feature J: Dark / Light Mode Toggle
+  // ========================================
+  function initThemeToggle() {
+    const toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+
+    const root = document.documentElement;
+
+    function applyTheme(theme) {
+      const isDark = theme === 'dark';
+
+      if (isDark) {
+        root.dataset.theme = 'dark';
+      } else {
+        delete root.dataset.theme;
+      }
+
+      toggle.setAttribute('aria-pressed', String(isDark));
+      toggle.textContent = isDark ? '\u2600' : '\u263E';
+    }
+
+    // The script in <head> has already chosen the starting theme
+    applyTheme(root.dataset.theme === 'dark' ? 'dark' : 'light');
+
+    toggle.addEventListener('click', function() {
+      const theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(theme);
+
+      try {
+        localStorage.setItem('tastes_of_africa_theme', theme);
+      } catch (e) {
+        console.warn('Theme preference could not be saved:', e);
+      }
+    });
+  }
+
+  // ========================================
   // Initialize All Features
   // ========================================
   initRecipeFiltering();
@@ -402,5 +689,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initNewsletter();
   initHeroBgLoop();
   initVideoCarousel();
+  initAboutGallery();
+  initIngredientScaler();
+  initThemeToggle();
 
 });

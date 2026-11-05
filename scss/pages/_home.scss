@@ -16,22 +16,18 @@
 
 .home-hero {
   min-height: 80vh;
-
-  @include respond-to(tablet) {
-    min-height: 90vh;
-  }
 }
 
 .home-section {
-  padding: $spacing-lg 0;
+  padding: $spacing-lg $spacing-md;
 
   .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 $spacing-md;
+    padding: 0 $spacing-sm;
 
     @include respond-to(tablet) {
-      padding: 0 $spacing-lg;
+      padding: 0 $spacing-md;
     }
   }
 }
@@ -194,25 +190,14 @@
   }
 }
 
-// Container responsive
-.container {
-  @include respond-to(mobile) {
-    padding: 0 $spacing-md;
-  }
-
-  @include respond-to(tablet) {
-    padding: 0 $spacing-lg;
-  }
-}
-
-// Section padding responsive
+// Section padding responsive — overridden by mobile-first base in _grid.scss
 .section {
   @include respond-to(mobile) {
-    padding: $spacing-lg 0;
+    padding: $spacing-lg $spacing-sm;
   }
 
   @include respond-to(tablet) {
-    padding: $spacing-xl 0;
+    padding: $spacing-xl $spacing-md;
   }
 }
 
@@ -220,7 +205,7 @@
 .footer-grid {
   @include respond-to(mobile) {
     grid-template-columns: 1fr;
-    gap: $spacing-lg;
+    gap: $spacing-md;
   }
 
   @include respond-to(tablet) {
@@ -248,13 +233,25 @@
   @include respond-to(mobile) {
     padding: $spacing-sm $spacing-md;
   }
+
+  @include respond-to(tablet) {
+    padding: $spacing-md $spacing-lg;
+  }
 }
 
 // Card content responsive
 .dish-card {
+  @include respond-to(mobile) {
+    border-radius: $spacing-sm;
+  }
+
   .card-content {
     @include respond-to(mobile) {
       padding: $spacing-sm $spacing-md;
+    }
+
+    @include respond-to(tablet) {
+      padding: $spacing-md;
     }
   }
 
@@ -267,6 +264,13 @@
   .card-description {
     @include respond-to(mobile) {
       font-size: 0.85rem;
+    }
+  }
+
+  .card-footer {
+    @include respond-to(mobile) {
+      padding-top: $spacing-sm;
+      gap: $spacing-xs;
     }
   }
 }
@@ -290,12 +294,18 @@
 .filter-bar {
   @include respond-to(mobile) {
     gap: $spacing-xs;
-    padding: $spacing-sm;
+    padding: $spacing-sm $spacing-md;
+    margin-bottom: $spacing-md;
 
     .filter-btn {
       padding: $spacing-xs $spacing-sm;
       font-size: 0.8rem;
     }
+  }
+
+  @include respond-to(tablet) {
+    padding: $spacing-md;
+    margin-bottom: $spacing-xl;
   }
 }
 
@@ -337,6 +347,10 @@
 // Detail content responsive
 .detail-content {
   @include respond-to(mobile) {
+    padding: $spacing-md $spacing-sm;
+  }
+
+  @include respond-to(tablet) {
     padding: $spacing-lg $spacing-md;
   }
 }
@@ -535,42 +549,6 @@
 // Mobile Padding Enhancements
 // ============================================
 
-// Page-level padding for mobile
-main[role="main"] {
-  @include respond-to(mobile) {
-    padding: 0 $spacing-sm;
-  }
-}
-
-// Section padding for mobile
-.section {
-  @include respond-to(mobile) {
-    padding: $spacing-lg $spacing-sm;
-  }
-
-  @include respond-to(tablet) {
-    padding: $spacing-xl 0;
-  }
-}
-
-// Container padding refinement
-.container {
-  @include respond-to(mobile) {
-    padding-left: $spacing-sm;
-    padding-right: $spacing-sm;
-  }
-
-  @include respond-to(tablet) {
-    padding-left: $spacing-md;
-    padding-right: $spacing-md;
-  }
-
-  @include respond-to(desktop) {
-    padding-left: $spacing-lg;
-    padding-right: $spacing-lg;
-  }
-}
-
 // Recipe grid mobile
 .recipe-grid {
   @include respond-to(mobile) {
@@ -592,7 +570,7 @@ main[role="main"] {
 // Recipe hero mobile
 .recipe-hero {
   @include respond-to(mobile) {
-    padding: $spacing-md 0;
+    padding: $spacing-md $spacing-sm;
 
     img {
       border-radius: $spacing-sm;
@@ -608,5 +586,9 @@ main[role="main"] {
     .region-content {
       padding: $spacing-md;
     }
+  }
+
+  @include respond-to(tablet) {
+    padding: $spacing-xl $spacing-md;
   }
 }

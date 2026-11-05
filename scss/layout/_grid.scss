@@ -7,12 +7,24 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 $spacing-lg;
+  padding: 0 $spacing-md;
+
+  @include respond-to(tablet) {
+    padding: 0 $spacing-lg;
+  }
+
+  @include respond-to(desktop) {
+    padding: 0 $spacing-xl;
+  }
 }
 
 // Section wrapper
 .section {
-  padding: $spacing-xl 0;
+  padding: $spacing-lg $spacing-md;
+
+  @include respond-to(tablet) {
+    padding: $spacing-xl $spacing-lg;
+  }
 }
 
 .section-header {
@@ -47,20 +59,27 @@
 
 // Recipe grid (catalog page)
 .recipe-grid {
-  @include responsive-grid(280px, $spacing-lg);
+  @include responsive-grid(300px, $spacing-lg);
 }
 
 // Filter bar
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: $spacing-sm;
+  gap: $spacing-xs;
   justify-content: center;
-  margin-bottom: $spacing-xl;
-  padding: $spacing-md;
+  margin-bottom: $spacing-lg;
+  padding: $spacing-sm $spacing-md;
   background-color: $color-african-white;
-  border-radius: $spacing-md;
+  border-radius: $spacing-sm;
   box-shadow: $shadow-card;
+
+  @include respond-to(tablet) {
+    gap: $spacing-sm;
+    margin-bottom: $spacing-xl;
+    padding: $spacing-md;
+    border-radius: $spacing-md;
+  }
 }
 
 // Two column layout
@@ -79,10 +98,16 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: $spacing-sm;
-  padding: $spacing-md 0;
-  font-size: 0.9rem;
+  gap: $spacing-xs;
+  padding: $spacing-sm 0;
+  font-size: 0.85rem;
   color: $color-text-muted;
+
+  @include respond-to(tablet) {
+    gap: $spacing-sm;
+    padding: $spacing-md 0;
+    font-size: 0.9rem;
+  }
 
   a {
     color: $color-african-red;
@@ -107,5 +132,9 @@
 .detail-content {
   max-width: 900px;
   margin: 0 auto;
-  padding: $spacing-xl 0;
+  padding: $spacing-lg $spacing-md;
+
+  @include respond-to(tablet) {
+    padding: $spacing-xl $spacing-lg;
+  }
 }

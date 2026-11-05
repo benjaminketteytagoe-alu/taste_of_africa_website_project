@@ -7,19 +7,54 @@
 }
 
 .region-section {
-  padding: $spacing-xl 0;
+  padding: $spacing-lg $spacing-md;
   border-bottom: 2px solid rgba($color-african-gold, 0.2);
 
   &:last-child {
     border-bottom: none;
+  }
+
+  @include respond-to(mobile) {
+    padding: $spacing-lg $spacing-sm;
+  }
+
+  @include respond-to(tablet) {
+    padding: $spacing-xl $spacing-lg;
   }
 }
 
 .region-content {
   max-width: 900px;
   margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @include respond-to(tablet) {
+    padding: 0 $spacing-lg;
+  }
+}
+
+.region-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.region-video {
+  margin-top: $spacing-lg;
+
+  h3 {
+    margin-bottom: $spacing-md;
+  }
+
+  .video-container {
+    margin: 0 auto;
+  }
 }
 
 .region-spices {
-  margin: $spacing-lg 0;
+  margin: $spacing-md 0;
+
+  @include respond-to(tablet) {
+    margin: $spacing-lg 0;
+  }
 }

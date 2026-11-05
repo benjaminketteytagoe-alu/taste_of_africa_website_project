@@ -15,9 +15,14 @@ $kente-white: #FFFFFF;
 .site-footer {
   background-color: $kente-black;
   color: $kente-white;
-  padding: $spacing-xl 0 $spacing-md;
-  margin-top: $spacing-xl;
+  padding: $spacing-lg $spacing-md $spacing-md;
+  margin-top: $spacing-lg;
   position: relative;
+
+  @include respond-to(tablet) {
+    padding: $spacing-xl $spacing-lg $spacing-md;
+    margin-top: $spacing-xl;
+  }
 
   // Kente-inspired top border
   &::before {
@@ -60,7 +65,15 @@ $kente-white: #FFFFFF;
   z-index: 1;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 $spacing-lg;
+  padding: 0 $spacing-sm;
+
+  @include respond-to(tablet) {
+    padding: 0 $spacing-md;
+  }
+
+  @include respond-to(desktop) {
+    padding: 0 $spacing-lg;
+  }
 }
 
 .footer-grid {
@@ -79,7 +92,7 @@ $kente-white: #FFFFFF;
 }
 
 .footer-section {
-  h3 {
+  h2 {
     font-family: $font-display;
     font-size: 1.1rem;
     font-weight: 700;
@@ -149,7 +162,7 @@ $kente-white: #FFFFFF;
 
 // Newsletter in footer
 .footer-newsletter {
-  h3 {
+  h2 {
     font-family: $font-display;
     font-size: 1.1rem;
     font-weight: 700;
@@ -167,6 +180,7 @@ $kente-white: #FFFFFF;
     flex-direction: column;
 
     .form-control {
+      min-width: 0; // The column sets the width; a fixed minimum overflows narrow screens
       background-color: rgba($color-african-white, 0.1);
       border-color: rgba($color-african-white, 0.2);
       color: $color-african-white;

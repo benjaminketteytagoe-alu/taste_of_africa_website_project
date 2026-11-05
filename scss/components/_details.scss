@@ -19,14 +19,19 @@ summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $spacing-md $spacing-lg;
+  padding: $spacing-sm $spacing-md;
   font-family: $font-display;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: $color-african-black;
   cursor: pointer;
   list-style: none;
   transition: background-color $transition-fast, color $transition-fast;
+
+  @include respond-to(tablet) {
+    padding: $spacing-md $spacing-lg;
+    font-size: 1.05rem;
+  }
 
   &::-webkit-details-marker {
     display: none;
@@ -72,8 +77,12 @@ details[open] > summary {
 
 // Accordion content
 details > .accordion-content {
-  padding: $spacing-lg;
+  padding: $spacing-md;
   animation: fadeInUp 0.3s ease;
+
+  @include respond-to(tablet) {
+    padding: $spacing-lg;
+  }
 
   p {
     margin-bottom: $spacing-md;

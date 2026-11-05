@@ -52,10 +52,9 @@ python3 -m http.server 8000
 
 # Using Node.js
 npx serve .
-
-# Or simply open the file directly
-open index.html
 ```
+
+Open the site at `http://localhost:8000` or a hosted URL. YouTube embeds show "Error 153" when a page is opened directly from disk (`file://`), and one video reports as unavailable on `127.0.0.1`, which is the default address for VS Code Live Server.
 
 ## Project Structure
 

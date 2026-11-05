@@ -66,6 +66,21 @@ table {
   border-spacing: 0;
 }
 
+// Keep the hidden attribute working on elements that set their own display
+[hidden] {
+  display: none !important;
+}
+
+// Visually hidden, still read by screen readers
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 // Responsive media resets
 iframe {
   max-width: 100%;
