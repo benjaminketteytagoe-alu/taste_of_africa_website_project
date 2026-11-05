@@ -121,71 +121,7 @@
   }
 }
 
-// Article card variant
-.article-card {
-  @extend .dish-card;
-
-  .card-content {
-    padding: $spacing-lg;
-  }
-
-  .card-title {
-    font-size: 1.25rem;
-  }
-}
-
-// Trend video card
-.trend-video-card {
-  @extend .dish-card;
-
-  .card-video-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background-color: $color-surface-dark;
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  }
-
-  .card-content {
-    padding: $spacing-md;
-  }
-
-  .card-title {
-    font-size: 1.05rem;
-    margin-bottom: $spacing-sm;
-  }
-
-  .card-description {
-    font-size: 0.85rem;
-    margin-bottom: 0;
-  }
-
-  .video-source {
-    display: flex;
-    align-items: center;
-    gap: $spacing-xs;
-    font-size: 0.8rem;
-    color: $color-text-muted;
-    margin-top: $spacing-sm;
-
-    .youtube-icon {
-      color: $color-african-red;
-      font-weight: 700;
-    }
-  }
-}
-
 // Hidden state for filtering
 .hidden {
-  display: none;
-}
-
-.recipe-card.hidden {
   display: none;
 }

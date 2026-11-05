@@ -1,16 +1,16 @@
 # Tastes of Africa
 
-A complete, production-grade, multi-page website celebrating the rich culinary heritage of the African continent. Built with semantic HTML5, modular SCSS (7-1 Architecture), and vanilla JavaScript.
+A multi-page website celebrating the culinary heritage of the African continent, built with semantic HTML5, modular SCSS, and vanilla JavaScript.
 
 ## Overview
 
 **Tastes of Africa** covers West, North, East, Central, and Southern African cuisines with:
 
-- **10 pages**: 5 main pages + 5 individual recipe detail pages
-- **Interactive features**: Recipe filtering, favorites with LocalStorage, form validation, mobile navigation
-- **Pan-African design**: Red, Gold, Green, Black color palette with authentic African geometric motifs
-- **Responsive design**: Mobile → Tablet → Desktop → Wide breakpoints
-- **Accessibility**: WCAG 2.1 AA compliance with semantic HTML5 landmarks
+- **10 pages**: 5 main pages + 5 individual recipe pages
+- **Interactive features**: Recipe filtering, favorites, ingredient scaling, dark/light mode, form validation, mobile navigation
+- **Pan-African design**: Red, gold, green, and black palette with kente-inspired accents
+- **Responsive design**: Layouts for phone, tablet, and desktop widths
+- **Accessibility**: Semantic landmarks, labelled forms, and keyboard-reachable controls
 
 ## Quick Start
 
@@ -23,7 +23,7 @@ A complete, production-grade, multi-page website celebrating the rich culinary h
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/benjaminketteytagoe-alu/taste_of_africa_website_project.git
 cd taste_of_africa_website_project
 
 # Install dependencies
@@ -54,7 +54,7 @@ python3 -m http.server 8000
 npx serve .
 ```
 
-Open the site at `http://localhost:8000` or a hosted URL. YouTube embeds show "Error 153" when a page is opened directly from disk (`file://`), and one video reports as unavailable on `127.0.0.1`, which is the default address for VS Code Live Server.
+Open the site at `http://localhost:8000`. YouTube embeds show "Error 153" when a page is opened directly from disk (`file://`), and one video reports as unavailable on `127.0.0.1`, which is the default address for VS Code Live Server.
 
 ## Project Structure
 
@@ -99,15 +99,16 @@ taste_of_africa_website_project/
 │   │   ├── _regions.scss       
 │   │   ├── _about.scss         
 │   │   └── _contact.scss       
-│   └── animations/
-│       └── _keyframes.scss     
+│   ├── animations/
+│   │   └── _keyframes.scss
+│   └── themes/
+│       └── _dark.scss
 ├── css/
 │   ├── styles.css              
 │   └── styles.css.map          
 ├── js/
 │   └── script.js               
-├── assets/
-│   └── placeholders/           
+├── assets/                     # Dish photos and logo
 ├── package.json                
 └── README.md                   
 ```
@@ -120,120 +121,136 @@ taste_of_africa_website_project/
 
 ### Responsive Breakpoints
 
-- **Mobile**: 480px (single column, stacked navigation)
-- **Tablet**: 768px (2-column grids, optimized spacing)
-- **Desktop**: 1024px (3-to-4 column recipe grids, sticky navigation)
-- **Wide**: 1280px (balanced layout, maximum content width)
+- **Mobile** (up to 480px): Single-column grids
+- **Tablet** (481px to 768px): Two-column grids
+- **Below 1024px**: Hamburger menu and slide-in drawer
+- **Desktop** (1024px and wider): Full navigation and multi-column grids
 
 ## Features
 
-### Feature A: Interactive Recipe Filtering
+### Interactive Recipe Filtering
 
-Filter recipes by region on the `recipes.html` page:
+Filter recipes by region on `recipes.html`:
 
 - **Filter options**: All, West Africa, North Africa, East Africa, Southern Africa, Central Africa
-- **Animated transitions**: Smooth fade/scale animations when filtering
+- **Method**: A loop adds or removes a `.hidden` class using each card's `data-region` attribute
 - **Active state**: Gold background on the active filter button
 
-### Feature B: Favorites with LocalStorage
+### Favorites with LocalStorage
 
-Persist favorite recipes across browser sessions:
+Save recipes across browser sessions:
 
-- **Heart button**: Click to toggle favorites on any recipe card
-- **Persistence**: Stored in `localStorage` under key `tastes_of_africa_favorites`
-- **Live counter**: Header badge shows total favorites count
-- **Pulse animation**: Heart scales and rotates on click
+- **Heart button**: Toggles a recipe on any card or recipe page
+- **Persistence**: Stored in `localStorage` under the key `tastes_of_africa_favorites`
+- **Live counter**: The header badge shows the total
+- **Pulse animation**: The heart scales and rotates on click
 
-### Feature C: Contact Form Validation
+### Ingredient Scaling
 
-Full client-side validation on `contact.html`:
+Each recipe page has a servings control (1 to 24):
 
-- **Name**: Required, non-empty
-- **Email**: Required, valid email format
-- **Country**: Required, with African countries datalist
-- **Subject**: Required, select from dropdown
-- **Message**: Required, minimum 21 characters
-- **Live character counter**: Shows current count vs minimum
-- **Error states**: Red borders and `aria-invalid` attributes
-- **Confirmation**: Personalized thank-you message with user's name
+- **Quantities**: Each amount is stored in a `data-qty` attribute and rounded to the nearest eighth
+- **Whole items**: Eggs, cans, and similar items stay as whole numbers
+- **Units**: Words change with the amount, such as "1 cup" and "2 cups"
 
-### Feature D: Mobile Navigation
+### Dark/Light Mode
 
-Responsive hamburger menu for mobile devices:
+A toggle in the header switches the theme on every page:
 
-- **Slide-in drawer**: Smooth animation from the right
-- **ARIA attributes**: `aria-expanded` toggled for accessibility
-- **Auto-close**: Drawer closes when a link is clicked
+- **Persistence**: Stored in `localStorage` under the key `tastes_of_africa_theme`
+- **Default**: Follows the device setting until a choice is saved
+- **No flash**: A small script in `<head>` applies the theme before the page is drawn
 
-### Feature E: Newsletter Subscription
+### Contact Form Validation
 
-Footer newsletter form with email validation:
+Client-side validation on `contact.html`:
 
-- **Email validation**: Regex-based format checking
-- **Success tooltip**: "Welcome to our culinary community!"
-- **Auto-dismiss**: Message fades after 5 seconds
+- **Required fields**: Name, email, country, subject, and message
+- **Message**: Must be more than 20 characters, with a live character counter
+- **Errors**: A message appears under each invalid field
+- **Confirmation**: The form is replaced by a thank-you message using the visitor's name
+
+### Mobile Navigation
+
+Hamburger menu below 1024px:
+
+- **Slide-in drawer**: Opens from the right
+- **Closing**: Hamburger button, backdrop, Escape key, or any drawer link
+- **ARIA**: `aria-expanded` reflects the drawer state
+
+### Newsletter Signup
+
+Footer form with email validation and a confirmation message that fades after 5 seconds.
+
+### Image Slideshows
+
+The home hero and About gallery change every 4 seconds and pause on hover.
 
 ## Pages
 
 ### Home Page (`index.html`)
 
-- Hero section with CTA buttons and embedded YouTube video
-- Featured dishes grid (4 signature dishes)
-- Explore by culinary region section (3 preview cards)
-- Latest food trends articles with `<mark>` highlights
-- Footer with newsletter signup
+- Hero section with background slideshow, calls to action, and embedded YouTube video
+- African cuisine gallery
+- Signature dishes (5 cards) and explore-by-region cards (4 cards)
+- Latest food trends articles
+- Key ingredients and cultural influences highlighted with `<mark>`
 
 ### Recipes Catalog (`recipes.html`)
 
-- Interactive regional filter bar
-- Recipe grid with 5+ cards
-- Each card includes: SVG placeholder, time/difficulty badges, favorite button, detail link
+- Regional filter bar
+- 5 recipe cards with photo, time and difficulty badges, favorite button, and recipe link
 
-### Recipe Detail Pages (`recipes/*.html`)
+### Recipe Pages (`recipes/*.html`)
 
 - Breadcrumb navigation
-- Cultural history and significance
-- Expandable cooking steps (`<details>/<summary>`)
-- Ingredients and equipment lists
+- Cultural history
+- Expandable cooking steps (`<details>` and `<summary>`)
+- Ingredients with servings control, plus equipment list
 - Nutritional facts table
-- Embedded tutorial video
-- Country of origin map (Google Maps iframe)
+- Embedded YouTube video
+- Map of the country of origin
 
-### Regions Showcase (`regions.html`)
+### Culinary Regions (`regions.html`)
 
-- 4 in-depth culinary zones: West Africa, North Africa/Maghreb, East Africa & Horn, Southern & Central Africa
-- Cultural history and climate influence narratives
-- Key spices highlighted with `<mark>` tags
-- Embedded educational YouTube videos
+- 4 culinary regions on one page: West Africa, North Africa & The Maghreb, East Africa & The Horn, Southern & Central Africa
+- Key ingredients highlighted with `<mark>`
+- Links to recipes and an embedded YouTube video for each region
 
 ### About Us (`about.html`)
 
-- Mission statement
-- Historical timeline narrative
-- Interactive Google Maps iframe (Makola Market or Jemaa el-Fnaa)
+- Mission statement and history timeline
+- Google Map of Jemaa el-Fnaa, Marrakech
+- Image gallery and African food videos
 
 ### Contact (`contact.html`)
 
-- Accessible contact form with full validation
-- Country datalist with African nations
-- Live character counter
-- Personalized confirmation message
+- Labelled contact form with validation
+- Country suggestions using `<datalist>`
+- Live character counter and personalized confirmation
 
 ## Accessibility
 
-- **WCAG 2.1 AA** compliance
-- **Contrast ratios**: All text exceeds 4.5:1 against backgrounds
-- **Semantic HTML5**: Proper landmark tags (`<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`)
-- **Form labels**: All form controls have associated `<label>` elements
-- **ARIA attributes**: `aria-label` on all interactive elements, `aria-invalid` on form errors
-- **Iframe titles**: All YouTube and Google Maps iframes have descriptive `title` attributes
+- **Semantic HTML5**: Landmark elements and an ordered heading structure
+- **Form labels**: Every form control has an associated `<label>`
+- **Keyboard support**: Visible focus styles, and Escape closes the mobile drawer
+- **ARIA**: `aria-invalid` on form errors and `aria-pressed` on toggle buttons
+- **Iframe titles**: YouTube and Google Maps iframes have descriptive `title` attributes
 
+Pages were checked with axe-core in Chrome in both themes. Automated tools catch only some accessibility issues, so this is not a claim of full WCAG conformance.
+
+## Known Limitations
+
+- Forms run in the browser only, so no messages or signups are sent or stored
+- Only the Jollof Rice page has a video of its own recipe; the other recipe pages show related dishes, labelled as such
+- Social, Privacy Policy, and Terms of Service links are placeholders
+- Nutritional values and cooking times are estimates
+- `npm run build:css` prints Sass deprecation warnings for `@import`
 
 ## Technologies
 
-- **HTML5**: Semantic markup with proper landmark tags
-- **SCSS (Sass)**: 7-1 architecture pattern with variables, mixins, functions, nesting
-- **JavaScript (ES6+)**: Vanilla JS with DOM manipulation and LocalStorage API
+- **HTML5**: Semantic markup
+- **SCSS (Sass)**: Variables, mixins, functions, and nesting, organized into partials
+- **JavaScript (ES6+)**: Vanilla JS with DOM manipulation and the LocalStorage API
 - **Google Fonts**: Syne, Plus Jakarta Sans, Playfair Display
-- **Sass Compiler**: npm-based build system
-
+- **Sass compiler**: npm-based build

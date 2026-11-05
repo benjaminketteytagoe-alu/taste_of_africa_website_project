@@ -50,11 +50,3 @@
     margin: 0 auto;
   }
 }
-
-.region-spices {
-  margin: $spacing-md 0;
-
-  @include respond-to(tablet) {
-    margin: $spacing-lg 0;
-  }
-}

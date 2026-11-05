@@ -3,8 +3,6 @@
 // ============================================
 
 // Google Fonts import
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
-
 // Body styles
 body {
   font-family: $font-body;
@@ -50,12 +48,6 @@ h5 {
 
 h6 {
   font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-}
-
-// Accent headings
-.accent-heading {
-  font-family: $font-accent;
-  font-style: italic;
 }
 
 // Paragraphs

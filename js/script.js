@@ -417,41 +417,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ========================================
-  // Feature G: Video Carousel
-  // ========================================
-  function initVideoCarousel() {
-    const thumbnails = document.querySelectorAll('.video-thumb');
-    const mainFrame = document.getElementById('mainVideoFrame');
-
-    if (thumbnails.length === 0 || !mainFrame) return;
-
-    thumbnails.forEach(function(thumb) {
-      thumb.addEventListener('click', function() {
-        // Update active state
-        thumbnails.forEach(function(t) {
-          t.classList.remove('active');
-        });
-        this.classList.add('active');
-
-        // Change video
-        const videoUrl = this.dataset.video;
-        if (videoUrl) {
-          mainFrame.src = videoUrl;
-        }
-      });
-
-      // Keyboard support
-      thumb.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.click();
-        }
-      });
-    });
-  }
-
-  // ========================================
-  // Feature H: About Page Image Gallery Loop
+  // Feature G: About Page Image Gallery Loop
   // ========================================
   function initAboutGallery() {
     const galleryLoop = document.getElementById('aboutGalleryLoop');
@@ -567,7 +533,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ========================================
-  // Feature I: Ingredient Scaling
+  // Feature H: Ingredient Scaling
   // ========================================
   function initIngredientScaler() {
     const scaler = document.getElementById('servingsScaler');
@@ -643,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ========================================
-  // Feature J: Dark / Light Mode Toggle
+  // Feature I: Dark / Light Mode Toggle
   // ========================================
   function initThemeToggle() {
     const toggle = document.getElementById('themeToggle');
@@ -688,7 +654,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initMobileNav();
   initNewsletter();
   initHeroBgLoop();
-  initVideoCarousel();
   initAboutGallery();
   initIngredientScaler();
   initThemeToggle();

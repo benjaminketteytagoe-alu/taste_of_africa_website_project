@@ -27,12 +27,6 @@
   border: 1px solid $color-african-green;
 }
 
-// Difficulty badges
-.badge-easy {
-  background-color: tint($color-african-green, 80%);
-  color: shade($color-african-green, 50%);
-}
-
 .badge-medium {
   background-color: tint($color-african-gold, 80%);
   color: shade($color-african-gold, 40%);

@@ -49,20 +49,3 @@ $transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 $shadow-card: 0 4px 15px rgba(0, 0, 0, 0.08);
 $shadow-elevated: 0 12px 28px rgba(0, 0, 0, 0.18);
 $shadow-gold-glow: 0 0 16px rgba(212, 175, 55, 0.35);
-
-// ============================================
-// CSS Custom Properties (exposed for runtime)
-// ============================================
-:root {
-  --color-african-red: #{$color-african-red};
-  --color-african-gold: #{$color-african-gold};
-  --color-african-green: #{$color-african-green};
-  --color-african-black: #{$color-african-black};
-  --color-african-white: #{$color-african-white};
-  --color-cream-bg: #{$color-cream-bg};
-  --color-surface-dark: #{$color-surface-dark};
-  --color-text-muted: #{$color-text-muted};
-  --font-display: #{$font-display};
-  --font-body: #{$font-body};
-  --font-accent: #{$font-accent};
-}

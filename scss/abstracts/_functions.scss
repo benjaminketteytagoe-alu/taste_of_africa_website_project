@@ -2,20 +2,6 @@
 // Sass Utility Functions
 // ============================================
 
-// Rem calculation: px to rem
-@function rem($pixels) {
-  @return ($pixels / 16) * 1rem;
-}
-
-// Contrast utility: return light or dark color based on background
-@function contrast($background, $light: $color-african-white, $dark: $color-african-black) {
-  @if lightness($background) > 50 {
-    @return $dark;
-  } @else {
-    @return $light;
-  }
-}
-
 // Color tint: lighten a color by mixing with white
 @function tint($color, $percentage) {
   @return mix(white, $color, $percentage);

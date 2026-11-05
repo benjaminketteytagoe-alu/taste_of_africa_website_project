@@ -82,17 +82,6 @@
   }
 }
 
-// Two column layout
-.two-column {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: $spacing-xl;
-
-  @include respond-to(tablet) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 // Breadcrumb navigation
 .breadcrumb {
   display: flex;
